@@ -49,5 +49,5 @@ Material:
     - _QueueControl: 0
     m_Colors:
     - _RimColor: {r: 2.6701574, g: 1.3856074, b: 0, a: 0.299}
-    - _ShadowColor: {r: 0.21960786, g: 0.5568628, b: 0.5176471, a: 1}
+    - _ShadowColor: {r: 0.9339623, g: 0.8416314, b: 0, a: 1}
   m_BuildTextureStacks: []
