@@ -108,14 +108,14 @@ public class OtoonShaderGraph : StandardBaseShaderGUI
     {
         var originIndentLevel = EditorGUI.indentLevel;
         var currentIndent = originIndentLevel;
-        m_SpecOptionFoldout.value = materialEditor.Foldout(m_SpecOptionFoldout.value, "Toon Specular Hightlights", material.IsKeywordEnabled("_SPECULARHIGHTLIGHTS"));
+        m_SpecOptionFoldout.value = materialEditor.Foldout(m_SpecOptionFoldout.value, "Toon Specular Hightlights", material.IsKeywordEnabled("_SPECULARHIGHTLIGHTS_ON"));
         if (m_SpecOptionFoldout.value)
         {
             if (m_SpecLightEnabledProp != null)
             {
-                materialEditor.DrawKeywordToggle(m_SpecLightEnabledProp, "_SPECULARHIGHTLIGHTS", "Enable Specular Lighting");
+                materialEditor.DrawKeywordToggle(m_SpecLightEnabledProp, "_SPECULARHIGHTLIGHTS_ON", "Enable Specular Lighting");
             }
-            if (!material.IsKeywordEnabled("_SPECULARHIGHTLIGHTS"))
+            if (!material.IsKeywordEnabled("_SPECULARHIGHTLIGHTS_ON"))
             {
                 GUI.enabled = false;
             }
