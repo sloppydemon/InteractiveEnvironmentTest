@@ -39,7 +39,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _FLIPY: 1
-    - _SampleOffset: 2
+    - _SampleOffset: 2.5
     - _Strength: 1
     - _Underlined: 0.472
     - _Z_to_Normal_Effector_Ratio: 0.739
