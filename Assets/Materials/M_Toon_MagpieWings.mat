@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_Toon_MagpieWings
+  m_Shader: {fileID: -6465566751694194690, guid: d11c3e9b984c02341806b6a9a1869334, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _HAFTONESHAPES_STRIPE
+  - _RIMLIGHTING_ON
+  - _SPECULARHIGHTLIGHTS_ON
+  m_InvalidKeywords: []
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: _ShadowPatternSize _SpecColor _SpecFalloff
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: d0d9e3b58e11ca749b15fa3bfc86d7b2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 2581d7ecf83804e4b9ed1fd92aaa413c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HatchingPatternMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RampTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - Boolean_f9999c8db29c427d86a843c1a1c85720: 0
+    - ShadowPatternScale: 88.8
+    - Vector1_0f3ca3289daa40b4a7654cc64fd05ec1: 0
+    - Vector1_85d44c600d6c46b38d9c8065f25681ea: 0
+    - Vector1_c89cb8dc56774a9583c7b9c3a5725c4c: 0
+    - Vector1_e5b6f1488dec4326bd8bbd0e05156810: -0.16
+    - _AllToon_OverrideShadowColor: 0
+    - _BumpScale: 0.578
+    - _DitherTexelSize: 1
+    - _DitherThreshold: 1
+    - _HAFTONESHAPES: 1
+    - _HafltoneFadeDistance: 100
+    - _HalfToneEnabled: 1
+    - _HalfToneIncludeReceivedShadow: 1
+    - _HalftoneDiffuseOffest: -0.06
+    - _HalftoneFadeToColor: 1
+    - _HalftoneLightSizeFactor: 0.147
+    - _HalftoneScale: 2.76
+    - _HalftoneSize: 1.03
+    - _HalftoneUseScreenSpaceUV: 1
+    - _HatchingDensity: 1
+    - _HatchingDiffuseOffset: 0
+    - _HatchingDrawStrength: 4
+    - _HatchingEnabled: 0
+    - _HatchingRotation: 0
+    - _HatchingSmoothness: 0.2
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _RIMLIGHTING: 1
+    - _RimLightAlign: 1
+    - _RimLightSmootness: 0
+    - _RimPower: 0.166
+    - _SPECULARHIGHTLIGHTS: 1
+    - _ShadowPatternSize: 1.59
+    - _SpecColor_1: 0.006
+    - _SpecFalloff: 0
+    - _SpecShadowStrenth: 0
+    - _StepViaRampTexture: 0
+    - _USERAMPCOLOR: 0
+    - _UseClipPattern: 1
+    - _UseNormalMap: 1
+    m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _HalftoneColor: {r: 0.066037714, g: 0.066037714, b: 0, a: 0.963}
+    - _HatchingColor: {r: 0, g: 0, b: 0, a: 1}
+    - _HatchingScale: {r: 15, g: 1, b: 0, a: 0}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 0.834}
+    - _ShadowColor: {r: 0.10377022, g: 0.08952739, b: 0, a: 0.842}
+    - _SpecColor: {r: 0.20069483, g: 0.20069483, b: 0.20069483, a: 0.017}
+  m_BuildTextureStacks: []
+--- !u!114 &6517652087849517331
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
