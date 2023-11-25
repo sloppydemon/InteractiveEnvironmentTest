@@ -149,7 +149,7 @@ Material:
     - _ShadowPatternSize: 0.3
     - _Smoothness: 0.59999996
     - _SmoothnessTextureChannel: 0
-    - _SpecColor_1: 0.951
+    - _SpecColor_1: 0.267
     - _SpecFalloff: 0
     - _SpecShadowStrenth: 0
     - _SpecularHighlights: 1
@@ -172,7 +172,7 @@ Material:
     - _HatchingScale: {r: 15, g: 1, b: 0, a: 0}
     - _RimColor: {r: 2, g: 2, b: 2, a: 0.645}
     - _ShadowColor: {r: 0.68872595, g: 0.8301887, b: 0.42684025, a: 0.279}
-    - _SpecColor: {r: 5.992157, g: 5.992157, b: 5.992157, a: 0.786}
+    - _SpecColor: {r: 11.984314, g: 11.984314, b: 11.984314, a: 0.786}
   m_BuildTextureStacks: []
 --- !u!114 &603089577943335647
 MonoBehaviour:
