@@ -93,7 +93,7 @@ Material:
     m_Ints: []
     m_Floats:
     - Boolean_f9999c8db29c427d86a843c1a1c85720: 0
-    - ShadowPatternScale: 45.6
+    - ShadowPatternScale: 15.7
     - Vector1_0f3ca3289daa40b4a7654cc64fd05ec1: 0
     - Vector1_27d6e7d385ac4b5fb06bbdc6e42e56a0: 1
     - Vector1_48bb6f524e494da799e6a2b3cc237cf8: 0
@@ -118,11 +118,11 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _HAFTONESHAPES: 1
-    - _HafltoneFadeDistance: 34.7
+    - _HafltoneFadeDistance: 28.9
     - _HalfToneEnabled: 1
     - _HalfToneIncludeReceivedShadow: 1
     - _HalftoneDiffuseOffest: -0.03
-    - _HalftoneFadeToColor: 0.475
+    - _HalftoneFadeToColor: 1
     - _HalftoneLightSizeFactor: 0.145
     - _HalftoneScale: 0.8
     - _HalftoneSize: 1.36
@@ -155,7 +155,7 @@ Material:
     - _StepViaRampTexture: 0
     - _Surface: 0
     - _USERAMPCOLOR: 0
-    - _UseClipPattern: 0
+    - _UseClipPattern: 1
     - _UseNormalMap: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
@@ -163,7 +163,7 @@ Material:
     - _BaseColor: {r: 0.7725491, g: 0.34509805, b: 0.07058824, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HalftoneColor: {r: 0, g: 0.111998945, b: 0.1792453, a: 1}
+    - _HalftoneColor: {r: 0, g: 0.08510873, b: 0.135, a: 0.982}
     - _HatchingColor: {r: 0, g: 0, b: 0, a: 1}
     - _HatchingScale: {r: 10, g: 10, b: 0, a: 0}
     - _RimColor: {r: 3.5648699, g: 3.5648699, b: 3.5648699, a: 0.09803922}

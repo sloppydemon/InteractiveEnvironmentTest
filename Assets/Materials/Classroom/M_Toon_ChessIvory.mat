@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Toon_WallPaint
+  m_Name: M_Toon_ChessIvory
   m_Shader: {fileID: -6465566751694194690, guid: 2c3c6a46626419c4f8bbdeab2ec2afbd, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -22,7 +22,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: _HalftoneFadeToColor
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -97,7 +97,7 @@ Material:
     - Vector1_0f3ca3289daa40b4a7654cc64fd05ec1: 0
     - Vector1_85d44c600d6c46b38d9c8065f25681ea: 0
     - Vector1_c89cb8dc56774a9583c7b9c3a5725c4c: 0
-    - Vector1_e5b6f1488dec4326bd8bbd0e05156810: -0.6
+    - Vector1_e5b6f1488dec4326bd8bbd0e05156810: -0.21
     - _AllToon_OverrideShadowColor: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
@@ -119,12 +119,12 @@ Material:
     - _Glossiness: 0.59999996
     - _GlossyReflections: 1
     - _HAFTONESHAPES: 1
-    - _HafltoneFadeDistance: 29.8
+    - _HafltoneFadeDistance: 28.9
     - _HalfToneEnabled: 1
     - _HalfToneIncludeReceivedShadow: 1
-    - _HalftoneDiffuseOffest: -0.64
+    - _HalftoneDiffuseOffest: -0.45
     - _HalftoneFadeToColor: 1
-    - _HalftoneLightSizeFactor: 0.401
+    - _HalftoneLightSizeFactor: 1
     - _HalftoneScale: 1.16
     - _HalftoneSize: 1.22
     - _HalftoneUseScreenSpaceUV: 1
@@ -144,12 +144,12 @@ Material:
     - _ReceiveShadows: 1
     - _RimLightAlign: 1
     - _RimLightSmootness: 0
-    - _RimPower: 0.013
+    - _RimPower: 0.355
     - _SPECULARHIGHTLIGHTS: 1
     - _ShadowPatternSize: 0.39
     - _Smoothness: 0.59999996
     - _SmoothnessTextureChannel: 0
-    - _SpecColor_1: 0.309
+    - _SpecColor_1: 0.01
     - _SpecFalloff: 0
     - _SpecShadowStrenth: 0
     - _SpecularHighlights: 1
@@ -164,15 +164,15 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 1, g: 0.9813286, b: 0.9103774, a: 1}
     - _Color: {r: 0.9063317, g: 0.9063317, b: 0.9063317, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HalftoneColor: {r: 0.053755786, g: 0.05694919, b: 0.0754717, a: 0.933}
+    - _HalftoneColor: {r: 0.08877628, g: 0.10535913, b: 0.17924425, a: 0.951}
     - _HatchingColor: {r: 0, g: 0, b: 0, a: 1}
     - _HatchingScale: {r: 15, g: 1, b: 0, a: 0}
-    - _RimColor: {r: 1, g: 1, b: 1, a: 0.193}
-    - _ShadowColor: {r: 0.10912, g: 0.136896, b: 0.248, a: 0.89}
-    - _SpecColor: {r: 1.0592737, g: 1.0592737, b: 1.0592737, a: 0.267}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 0.48}
+    - _ShadowColor: {r: 0.509434, g: 0.4504912, b: 0, a: 0.866}
+    - _SpecColor: {r: 2.9960785, g: 2.9960785, b: 2.9960785, a: 0.444}
   m_BuildTextureStacks: []
 --- !u!114 &5191489354522234389
 MonoBehaviour:

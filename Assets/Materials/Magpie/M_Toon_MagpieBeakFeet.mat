@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Toon_WallPaint
+  m_Name: M_Toon_MagpieBeakFeet
   m_Shader: {fileID: -6465566751694194690, guid: 2c3c6a46626419c4f8bbdeab2ec2afbd, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -15,14 +15,15 @@ Material:
   - _HAFTONESHAPES_STRIPE
   - _RIMLIGHTING_ON
   - _SPECULARHIGHTLIGHTS_ON
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _SPECULARHIGHTLIGHTS
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: _HalftoneFadeToColor
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -97,7 +98,7 @@ Material:
     - Vector1_0f3ca3289daa40b4a7654cc64fd05ec1: 0
     - Vector1_85d44c600d6c46b38d9c8065f25681ea: 0
     - Vector1_c89cb8dc56774a9583c7b9c3a5725c4c: 0
-    - Vector1_e5b6f1488dec4326bd8bbd0e05156810: -0.6
+    - Vector1_e5b6f1488dec4326bd8bbd0e05156810: 0.37
     - _AllToon_OverrideShadowColor: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
@@ -115,18 +116,18 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _GlossMapScale: 1
-    - _Glossiness: 0.59999996
-    - _GlossyReflections: 1
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
     - _HAFTONESHAPES: 1
-    - _HafltoneFadeDistance: 29.8
+    - _HafltoneFadeDistance: 28.9
     - _HalfToneEnabled: 1
     - _HalfToneIncludeReceivedShadow: 1
-    - _HalftoneDiffuseOffest: -0.64
+    - _HalftoneDiffuseOffest: -0.14
     - _HalftoneFadeToColor: 1
-    - _HalftoneLightSizeFactor: 0.401
-    - _HalftoneScale: 1.16
-    - _HalftoneSize: 1.22
+    - _HalftoneLightSizeFactor: 0.743
+    - _HalftoneScale: 4.54
+    - _HalftoneSize: 2
     - _HalftoneUseScreenSpaceUV: 1
     - _HatchingDensity: 1
     - _HatchingDiffuseOffset: 0
@@ -135,21 +136,20 @@ Material:
     - _HatchingRotation: 0
     - _HatchingSmoothness: 0.2
     - _Metallic: 0
-    - _Mode: 0
     - _OcclusionStrength: 1
-    - _Parallax: 0.02
+    - _Parallax: 0.005
     - _QueueControl: -1
     - _QueueOffset: 0
     - _RIMLIGHTING: 1
     - _ReceiveShadows: 1
     - _RimLightAlign: 1
     - _RimLightSmootness: 0
-    - _RimPower: 0.013
+    - _RimPower: 0.615
     - _SPECULARHIGHTLIGHTS: 1
     - _ShadowPatternSize: 0.39
-    - _Smoothness: 0.59999996
+    - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
-    - _SpecColor_1: 0.309
+    - _SpecColor_1: 0.001
     - _SpecFalloff: 0
     - _SpecShadowStrenth: 0
     - _SpecularHighlights: 1
@@ -158,23 +158,22 @@ Material:
     - _StepViaRampTexture: 0
     - _Surface: 0
     - _USERAMPCOLOR: 0
-    - _UVSec: 0
     - _UseClipPattern: 1
     - _UseNormalMap: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.9063317, g: 0.9063317, b: 0.9063317, a: 1}
+    - _BaseColor: {r: 0.24528301, g: 0.21828644, b: 0.100658596, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HalftoneColor: {r: 0.053755786, g: 0.05694919, b: 0.0754717, a: 0.933}
+    - _HalftoneColor: {r: 0, g: 0.0025289818, b: 0.1132006, a: 0.957}
     - _HatchingColor: {r: 0, g: 0, b: 0, a: 1}
     - _HatchingScale: {r: 15, g: 1, b: 0, a: 0}
-    - _RimColor: {r: 1, g: 1, b: 1, a: 0.193}
-    - _ShadowColor: {r: 0.10912, g: 0.136896, b: 0.248, a: 0.89}
-    - _SpecColor: {r: 1.0592737, g: 1.0592737, b: 1.0592737, a: 0.267}
+    - _RimColor: {r: 4, g: 4, b: 4, a: 1}
+    - _ShadowColor: {r: 0.00078094227, g: 0, b: 0.12264032, a: 0.617}
+    - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.718}
   m_BuildTextureStacks: []
---- !u!114 &5191489354522234389
+--- !u!114 &1818860991757096065
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
