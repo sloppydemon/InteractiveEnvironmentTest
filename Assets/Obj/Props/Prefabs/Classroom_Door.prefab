@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5850381620641336486}
   - component: {fileID: 8662018786634957577}
   - component: {fileID: 4260385389870935561}
-  - component: {fileID: 6630441233775359214}
+  - component: {fileID: 625222017795134909}
+  - component: {fileID: 1337383553239609893}
   - component: {fileID: 8033414697689264858}
   - component: {fileID: 3542847727881503987}
   m_Layer: 0
@@ -86,8 +87,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6630441233775359214
-MeshCollider:
+--- !u!136 &625222017795134909
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -104,10 +105,34 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7669032377086973160, guid: 15ccf798896b239408edcfab6fa05f45, type: 3}
+  serializedVersion: 2
+  m_Radius: 0.012482643
+  m_Height: 0.14658275
+  m_Direction: 1
+  m_Center: {x: 0.0675, y: -0.064704366, z: -0.00081725424}
+--- !u!136 &1337383553239609893
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2204381998163515807}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.012482643
+  m_Height: 0.14090599
+  m_Direction: 1
+  m_Center: {x: -0.06794071, y: -0.061542217, z: -0.00081725424}
 --- !u!54 &8033414697689264858
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -116,7 +141,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2204381998163515807}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -151,8 +176,8 @@ HingeJoint:
   serializedVersion: 2
   m_UseSpring: 1
   m_Spring:
-    spring: 0
-    damper: 0
+    spring: 1
+    damper: 0.2
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -347,5 +372,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.033336163, y: 2.1606734, z: 0.926003}
-  m_Center: {x: -0.016667843, y: 1.0494732, z: -0.46300173}
+  m_Size: {x: 0.033336163, y: 2.1632867, z: 0.926003}
+  m_Center: {x: -0.016667843, y: 1.0808327, z: -0.46300173}
