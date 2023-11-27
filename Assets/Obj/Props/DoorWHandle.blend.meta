@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5bff24222813ae74bbb103ba1d429471
+guid: 15ccf798896b239408edcfab6fa05f45
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Bark_Mat.006
-    second: {fileID: 2100000, guid: 6a95a1dd976eb4a4caec0847d9f38a70, type: 2}
+      name: DoorMetal
+    second: {fileID: 2100000, guid: cd59f3e789d573d419e99c28e997a069, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: PalmAtlas_Mat.006
-    second: {fileID: 2100000, guid: 1f31e55aec0d2a14084218a08aa9e2a3, type: 2}
+      name: DoorWood
+    second: {fileID: 2100000, guid: 0518ad94813c07343be3f0a594222f00, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -44,10 +44,7 @@ ModelImporter:
     clipAnimations: []
     isReadable: 0
   meshes:
-    lODScreenPercentages:
-    - 0.25
-    - 0.125
-    - 0.01
+    lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
