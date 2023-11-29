@@ -325,6 +325,7 @@ GameObject:
   - component: {fileID: 237229913}
   - component: {fileID: 237229912}
   - component: {fileID: 237229914}
+  - component: {fileID: 237229915}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: MainLight
@@ -343,8 +344,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 3.3
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.96
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -387,8 +388,8 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
+  m_ColorTemperature: 4521
+  m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
@@ -432,6 +433,20 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &237229915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237229911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1328be25a98f9b945a944374d96308ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zenithTemperature: 10000
+  horizonTemperature: 2000
 --- !u!1001 &247314372
 PrefabInstance:
   m_ObjectHideFlags: 0
