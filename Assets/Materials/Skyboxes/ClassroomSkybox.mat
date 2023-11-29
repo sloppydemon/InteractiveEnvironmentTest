@@ -34,7 +34,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: _CLOUDGRADIENTBLENDMETHOD
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -115,12 +115,12 @@ Material:
     - _CloudNormalStrength: 150
     - _CloudScale: 6.6
     - _CloudSmoothness: 0.1
-    - _CloudThicknessFactor: 0.606
+    - _CloudThicknessFactor: 0.36
     - _CloudThreshold: 0.391
-    - _CloudUnderlineSmoothness: 0.011
+    - _CloudUnderlineSmoothness: 0.006
     - _CloudUnderlineThickness: 0.054
     - _CloudUnderllineStart: 0
-    - _CloudsBrightness: 1
+    - _CloudsBrightness: 0.825
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
@@ -147,15 +147,18 @@ Material:
     - _Layer1Separation: 1.00015
     - _Layer1ThresholdFactor: 0.978
     - _Layer2Height: 1.01
+    - _Layer2HeightAddend: 0.0001
     - _Layer2NormalRotation: 0.139
     - _Layer2Separation: 1.0001
     - _Layer2ThresholdFactor: 0.908
     - _Layer3Height: 1.0664
+    - _Layer3HeightAddend: 0.0095
     - _Layer3NormalRotation: 1
     - _Layer3ThresholdFactor: 0.954
     - _Metallic: 0
     - _NoiseToGradientLerp: 0.703
     - _OcclusionStrength: 1
+    - _OutlineThickness: 0.005
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -171,10 +174,11 @@ Material:
     - _SunBackscatterDistance: 0.531
     - _SunSize: 0.185
     - _SunSoftness: 0.167
-    - _SunToCloudColorInfluence: 0.191
+    - _SunToCloudColorInfluence: 0.231
     - _Surface: 0
     - _Toon: 1
-    - _ToonSmoothness: 0.026
+    - _ToonOutline: 1
+    - _ToonSmoothness: 0.005
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
@@ -184,18 +188,18 @@ Material:
     - _HardLightColor: {r: 1.986, g: 1.986, b: 1.986, a: 1}
     - _HighlightColor: {r: 0.759, g: 0.759, b: 0.759, a: 1}
     - _HorizonColor: {r: 0, g: 0.6269166, b: 0.8018868, a: 1}
-    - _HorizonColorDauwnsk: {r: 0.9811321, g: 0.27177346, b: 0.760294, a: 1}
+    - _HorizonColorDauwnsk: {r: 0.44065464, g: 0.2705882, b: 0.98039216, a: 1}
     - _HorizonColorDauwskn: {r: 0.8301887, g: 0, b: 0.5743167, a: 0}
     - _HorizonColorZenith: {r: 0, g: 0.6269166, b: 0.8018868, a: 1}
     - _ShadowColor: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}
     - _SkyColor: {r: 0.0006157947, g: 0, b: 0.6132076, a: 1}
-    - _SkyColorDauwnsk: {r: 0.15406537, g: 0, b: 0.31199998, a: 1}
+    - _SkyColorDauwnsk: {r: 0.06207859, g: 0, b: 0.3137255, a: 1}
     - _SkyColorDauwskn: {r: 0.15406537, g: 0, b: 0.31199998, a: 0}
     - _SkyColorZenith: {r: 0.0006157947, g: 0, b: 0.6132076, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SunColor: {r: 0.93759847, g: 0.8331752, b: 0.5616746, a: 1}
     - _SunColorTint: {r: 0.98039216, g: 0.9729278, b: 0.9245098, a: 1}
-    - _SunColorTintDauwnsk: {r: 2, g: 1.460581, b: 0, a: 1}
+    - _SunColorTintDauwnsk: {r: 15.999998, g: 6.2449193, b: 0, a: 1}
     - _SunColorTintDauwskn: {r: 0.9433962, g: 0.5244909, b: 0.022249907, a: 1}
     - _SunColorTintZenith: {r: 1.6784314, g: 1.8740599, b: 2, a: 1}
     - _UnderlineColor: {r: 0.066037714, g: 0.066037714, b: 0.066037714, a: 1}
