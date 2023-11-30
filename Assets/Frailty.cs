@@ -35,9 +35,6 @@ public class Frailty : MonoBehaviour
     {
         cam = Camera.main;
         pc = GetComponent<FirstPersonController>();
-        Camera camera = cam.GetComponent<Camera>();
-        Renderer renderer = camera.GetComponent<Renderer>();
-        Debug.Log(renderer.sharedMaterials);
         rb = GetComponent<Rigidbody>();
         coll = GetComponent<CapsuleCollider>();
         control = GetComponent<CharacterController>();
