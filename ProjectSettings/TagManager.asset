@@ -8,6 +8,8 @@ TagManager:
   - CinemachineTarget
   - ScreenCamera
   - cockpit_capitalLaser
+  - Movable
+  - Floor
   layers:
   - Default
   - TransparentFX

@@ -23,7 +23,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: _HalftoneFadeToColor _ShadowColor
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -148,8 +148,8 @@ Material:
     - _ShadowPatternSize: 0.39
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
-    - _SpecColor_1: 0.012
-    - _SpecFalloff: 0
+    - _SpecColor_1: 0
+    - _SpecFalloff: 1
     - _SpecShadowStrenth: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -169,7 +169,7 @@ Material:
     - _HatchingScale: {r: 10, g: 10, b: 0, a: 0}
     - _RimColor: {r: 3.5648699, g: 3.5648699, b: 3.5648699, a: 0.09803922}
     - _ShadowColor: {r: 0.103771724, g: 0.011403693, b: 0, a: 0.53}
-    - _SpecColor: {r: 0.25, g: 0.25, b: 0.25, a: 0.09}
+    - _SpecColor: {r: 0.25, g: 0.25, b: 0.25, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &1550234097129023509
 MonoBehaviour:

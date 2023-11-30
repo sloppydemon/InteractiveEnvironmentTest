@@ -125,6 +125,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _DivideTimeByDeltaTime: 0.58
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _ENUM: 0
@@ -136,12 +137,17 @@ Material:
     - _GradientErosionDirection: 0.358
     - _GradientErosionMovement: 0.03
     - _GradientScaleFactor: 0.1
-    - _HardLightSmoothness: 0.025
+    - _HardLightSmoothness: 0.02
     - _HardLightSpread: 0.696
-    - _HighlightSmoothness: 0.025
+    - _HighlightSmoothness: 0.02
     - _HighlightSpread: 0.746
     - _HorizonColorStart: -0.89
     - _HorizonColorStart_1: -0.89
+    - _JitterAmount: 0.117
+    - _JitterPerFrame: 0.126
+    - _JitterScale: 20
+    - _JitterTimeOffset: 15.7
+    - _JitterVectorSeparation: 0.515
     - _Layer0CloudThreshold: 0.5
     - _Layer1CloudThreshold: 0.5
     - _Layer1Separation: 1.00015
@@ -163,7 +169,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _ShadowSmoothness: 0.112
+    - _ShadowSmoothness: 0.025
     - _ShadowSpread: 0.061
     - _SkyColorStart: 0.74
     - _Smoothness: 0.5
@@ -177,6 +183,7 @@ Material:
     - _SunToCloudColorInfluence: 0.231
     - _Surface: 0
     - _Toon: 1
+    - _ToonJitter: 1
     - _ToonOutline: 1
     - _ToonSmoothness: 0.005
     - _WorkflowMode: 1
@@ -190,11 +197,15 @@ Material:
     - _HorizonColor: {r: 0, g: 0.6269166, b: 0.8018868, a: 1}
     - _HorizonColorDauwnsk: {r: 0.44065464, g: 0.2705882, b: 0.98039216, a: 1}
     - _HorizonColorDauwskn: {r: 0.8301887, g: 0, b: 0.5743167, a: 0}
+    - _HorizonColorNearSunDauwnsk: {r: 0.98039216, g: 0.637588, b: 0.27058816, a: 1}
+    - _HorizonColorNearSunZenith: {r: 0.6096476, g: 0.9433962, b: 0.8014379, a: 1}
     - _HorizonColorZenith: {r: 0, g: 0.6269166, b: 0.8018868, a: 1}
     - _ShadowColor: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}
     - _SkyColor: {r: 0.0006157947, g: 0, b: 0.6132076, a: 1}
     - _SkyColorDauwnsk: {r: 0.06207859, g: 0, b: 0.3137255, a: 1}
     - _SkyColorDauwskn: {r: 0.15406537, g: 0, b: 0.31199998, a: 0}
+    - _SkyColorNearSunDauwnsk: {r: 0.5461171, g: 0, b: 0.681, a: 1}
+    - _SkyColorNearSunZenith: {r: 0.33041117, g: 0.5008304, b: 0.7075471, a: 1}
     - _SkyColorZenith: {r: 0.0006157947, g: 0, b: 0.6132076, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SunColor: {r: 0.93759847, g: 0.8331752, b: 0.5616746, a: 1}

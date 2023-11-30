@@ -20,7 +20,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: _SampleOffset
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -43,6 +43,7 @@ Material:
     - _DepthSmoothOpacity: 0.75
     - _FLIPY: 1
     - _FarNoiseDepth: 6
+    - _Heavy: 0.001
     - _NearNoiseDepth: 0.5
     - _NoiseBlend: 0.0005
     - _NoiseScale: 50
