@@ -62,9 +62,6 @@ public class Frailty : MonoBehaviour
                 rb.AddForce(new Vector3(0, collision.impulse.magnitude, 0));
                 rb.AddTorque(new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f)));
             }
-            
-            //rb.AddForce(new Vector3(Random.Range(-10f, 20f), Random.Range(0f, 150f), Random.Range(-10f, 10f)));
-
         }
     }
 
@@ -97,7 +94,6 @@ public class Frailty : MonoBehaviour
                     dead = true;
                 }
             }
-            
         }
     }
 
