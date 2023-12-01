@@ -108,6 +108,10 @@ Material:
     - _CLOUDGRADIENTBLENDMETHOD: 0
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
+    - _CloudCutoff: 3.9
+    - _CloudCutoffEnabled: 1
+    - _CloudCutoffFalloff: 0.005
+    - _CloudDistance: 0.291
     - _CloudFarTiling: 0.01
     - _CloudLayerSeparation: 1.000171
     - _CloudMovement: 0.01

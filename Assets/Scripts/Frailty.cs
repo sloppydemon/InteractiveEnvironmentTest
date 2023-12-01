@@ -13,6 +13,7 @@ public class Frailty : MonoBehaviour
     FirstPersonController pc;
     CharacterController control;
     public float injuriousFallHeight;
+    public float killingImpulse;
     [SerializeField]
     float fallHeight;
     [SerializeField]
@@ -27,6 +28,8 @@ public class Frailty : MonoBehaviour
     Vector3 lastVelocity;
     [SerializeField]
     Vector3 lastPosition;
+    [SerializeField]
+    GameObject killingObject;
     bool dying;
     public bool dead;
     Camera cam;
@@ -44,15 +47,33 @@ public class Frailty : MonoBehaviour
         lastFall = 0f;
         injuriousFall = false;
         dying = false;
+        killingObject = null;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.relativeVelocity);
-        Debug.Log(collision.impulse.magnitude);
+        if (collision.impulse.magnitude > killingImpulse)
+        {
+            Debug.Log(collision.relativeVelocity);
+            Debug.Log(collision.impulse.magnitude);
+            Debug.Log(collision.gameObject.name);
+            if (!dead && !dying)
+            {
+                pc.enabled = false;
+                control.enabled = false;
+                rb.isKinematic = false;
+                dying = true;
+                rb.AddForceAtPosition(-collision.impulse * 200, collision.GetContact(0).point);
+                rb.AddForce(new Vector3(0, collision.impulse.magnitude * 20f, 0));
+                rb.angularDrag = 0.5f;
+                Time.timeScale = 0.1f;
+                Time.fixedDeltaTime = 0.002f;
+                killingObject = collision.gameObject;
+            }
+        }
+
         if (injuriousFall)
         {
-            //rb.position = lastPosition;
             rb.angularDrag = 0.5f;
             if (!dead)
             {
@@ -71,7 +92,7 @@ public class Frailty : MonoBehaviour
         {
             if(!dead)
             {
-                if (other.gameObject.tag != "Player")
+                if (other.gameObject.tag != "Player" && other.gameObject != killingObject)
                 {
                     GameObject[] destroyList = GameObject.FindGameObjectsWithTag("Floor");
                     for (int i = 0; i < destroyList.Length; i++)
