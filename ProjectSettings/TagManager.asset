@@ -10,6 +10,7 @@ TagManager:
   - cockpit_capitalLaser
   - Movable
   - Floor
+  - Magpie
   layers:
   - Default
   - TransparentFX

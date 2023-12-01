@@ -125,7 +125,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DivideTimeByDeltaTime: 0.58
+    - _DivideTimeByDeltaTime: 0.101
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _ENUM: 0

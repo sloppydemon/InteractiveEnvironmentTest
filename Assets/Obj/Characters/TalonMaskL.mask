@@ -1,0 +1,237 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TalonMaskL
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: magpieSkeleton
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/abdomen
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.L/legShin.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.L/legShin.L/foot.L
+    m_Weight: 1
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.L/legShin.L/foot.L/talonBackA.L
+    m_Weight: 1
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.L/legShin.L/foot.L/talonBackA.L/talonBackB.L
+    m_Weight: 1
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.L/legShin.L/foot.L/talonBackA.L/talonBackB.L/talonBackC.L
+    m_Weight: 1
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.L/legShin.L/foot.L/talonFrontIA.L
+    m_Weight: 1
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.L/legShin.L/foot.L/talonFrontIA.L/talonFrontIB.L
+    m_Weight: 1
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.L/legShin.L/foot.L/talonFrontIA.L/talonFrontIB.L/talonFrontIC.L
+    m_Weight: 1
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.L/legShin.L/foot.L/talonFrontOA.L
+    m_Weight: 1
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.L/legShin.L/foot.L/talonFrontOA.L/talonFrontOB.L
+    m_Weight: 1
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.L/legShin.L/foot.L/talonFrontOA.L/talonFrontOB.L/talonFrontOC.L
+    m_Weight: 1
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.R/legShin.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.R/legShin.R/foot.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.R/legShin.R/foot.R/talonBackA.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.R/legShin.R/foot.R/talonBackA.R/talonBackB.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.R/legShin.R/foot.R/talonBackA.R/talonBackB.R/talonBackC.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.R/legShin.R/foot.R/talonFrontIA.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.R/legShin.R/foot.R/talonFrontIA.R/talonFrontIB.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.R/legShin.R/foot.R/talonFrontIA.R/talonFrontIB.R/talonFrontIC.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.R/legShin.R/foot.R/talonFrontOA.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.R/legShin.R/foot.R/talonFrontOA.R/talonFrontOB.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/hips/legThigh.R/legShin.R/foot.R/talonFrontOA.R/talonFrontOB.R/talonFrontOC.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/spine.001
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/spine.001/craw
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/spine.001/neck
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/spine.001/neck/head
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/spine.001/neck/head/beakLower
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/tail
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/tail/t00a.M
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/tail/t00a.M/t00b.M
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/tail/t01a.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/tail/t01a.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/tail/t02a.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/tail/t02a.L/t02b.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/tail/t02a.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/tail/t02a.R/t02b.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/tail/t03a.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/tail/t03a.L/t03b.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/tail/t03a.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/tail/t03a.R/t03b.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/tail/t04a.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/tail/t04a.L/t04b.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/tail/t04a.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/tail/t04a.R/t04b.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/tail/t05a.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/tail/t05a.L/t05b.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/tail/t05a.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/tail/t05a.R/t05b.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/tail/tail.001
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing1a.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing1a.L/f01.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing1a.L/wing1b.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing2.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing2.L/f02.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing2.L/wing2a.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing2.L/wing2a.L/wing2b.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing2.L/wing3.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing2.L/wing3.L/f03.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing2.L/wing3.L/f04.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing2.L/wing3.L/f05.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing2.L/wing3.L/f06.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing2.L/wing3.L/f07.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing2.L/wing3.L/f08.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing2.L/wing3.L/f09.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing2.L/wing3.L/f10.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing2.L/wing3.L/f11.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing2.L/wing3.L/wing4.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing2.L/wing3.L/wing4.L/f12.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing2.L/wing3.L/wing4.L/f13.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing2.L/wing3.L/wing4.L/f14.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing2.L/wing3.L/wing4.L/f15.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing2.L/wing3.L/wing4.L/f16.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing2.L/wing3.L/wing4.L/f17.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.L/wing2.L/wing3.L/wing4.L/f18.L
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing1a.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing1a.R/f01.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing1a.R/wing1b.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing2.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing2.R/f02.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing2.R/wing2a.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing2.R/wing2a.R/wing2b.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing2.R/wing3.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing2.R/wing3.R/f03.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing2.R/wing3.R/f04.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing2.R/wing3.R/f05.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing2.R/wing3.R/f06.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing2.R/wing3.R/f07.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing2.R/wing3.R/f08.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing2.R/wing3.R/f09.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing2.R/wing3.R/f10.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing2.R/wing3.R/f11.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing2.R/wing3.R/wing4.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing2.R/wing3.R/wing4.R/f12.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing2.R/wing3.R/wing4.R/f13.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing2.R/wing3.R/wing4.R/f14.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing2.R/wing3.R/wing4.R/f15.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing2.R/wing3.R/wing4.R/f16.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing2.R/wing3.R/wing4.R/f17.R
+    m_Weight: 0
+  - m_Path: magpieSkeleton/magpieRoot/spine/wingBase/wingBase.001/wing1.R/wing2.R/wing3.R/wing4.R/f18.R
+    m_Weight: 0
+  - m_Path: magpieSubDBody
+    m_Weight: 0
+  - m_Path: magpieSubDWings
+    m_Weight: 0
