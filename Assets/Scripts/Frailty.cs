@@ -19,19 +19,19 @@ public class Frailty : MonoBehaviour
     public Vector3 messagePositionFar;
     public string messageDeadFallA;
     public string messageDeadFallB;
-    public Vector3 messageScaleDeadFallA;
-    public Vector3 messageScaleDeadFallB;
+    public Vector3 messageScaleDeadFall;
     public Vector3 messageScalePressAnyKey;
     public string messageDeadKillA;
     public string messageDeadKillB;
     public string messageDeadKillC;
-    public Vector3 messageScaleDeadKillA;
-    public Vector3 messageScaleDeadKillC;
+    public Vector3 messageScaleDeadKill;
     public string messagePressAnyKey;
     public GameObject messageGO;
     public GameObject messageBox;
     public GameObject narrationCamera;
     public GameObject narrationText;
+    public GameObject magpie;
+    Camera cam;
 
     [SerializeField]
     float fallHeight;
@@ -49,11 +49,20 @@ public class Frailty : MonoBehaviour
     Vector3 lastPosition;
     [SerializeField]
     GameObject killingObject;
+    [SerializeField]
     bool dying;
+    [SerializeField]
     public bool dead;
-    Camera cam;
     [SerializeField]
     string deathType;
+    [SerializeField]
+    bool paperPlane;
+    [SerializeField]
+    bool paperGliding;
+    [SerializeField]
+    GameObject paperPlaneGO;
+    [SerializeField]
+    bool magpieRiding;
 
     void Start()
     {
@@ -68,18 +77,20 @@ public class Frailty : MonoBehaviour
         lastFall = 0f;
         injuriousFall = false;
         dying = false;
+        dead = false;
         killingObject = null;
         messageGO.SetActive(false);
         deathType = "None";
+        paperGliding = false;
+        paperPlane = false;
+        paperPlaneGO = null;
+        magpieRiding = false;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.impulse.magnitude > killingImpulse)
         {
-            Debug.Log(collision.relativeVelocity);
-            Debug.Log(collision.impulse.magnitude);
-            Debug.Log(collision.gameObject.name);
             if (!dead && !dying)
             {
                 pc.enabled = false;
@@ -93,6 +104,18 @@ public class Frailty : MonoBehaviour
                 Time.fixedDeltaTime = 0.002f;
                 killingObject = collision.gameObject;
                 deathType = "kill";
+            }
+        }
+
+        if (paperGliding)
+        {
+            if (collision.gameObject.tag == "Floor")
+            {
+                pc.enabled = true;
+                control.enabled = true;
+                rb.isKinematic = true;
+                paperGliding = false;
+
             }
         }
 
@@ -147,42 +170,55 @@ public class Frailty : MonoBehaviour
 
     void Update()
     {
-        if (!injuriousFall)
+        if (!paperGliding && !magpieRiding)
         {
-            if (!pc.Grounded)
+            if (!injuriousFall)
             {
-                fallDifference = transform.position.y - lastHeight;
-                if (-fallDifference > 0f)
+                if (!pc.Grounded && !paperPlane)
                 {
-                    fallHeight -= fallDifference;
+                    fallDifference = transform.position.y - lastHeight;
+                    if (-fallDifference > 0f)
+                    {
+                        fallHeight -= fallDifference;
+                    }
+
+                    lastVelocity = control.velocity;
+                    lastPosition = rb.position;
+
+                    if (fallHeight > injuriousFallHeight)
+                    {
+                        lastFall = fallHeight;
+                        injuriousFall = true;
+                        deathType = "fall";
+                        pc.enabled = false;
+                        control.enabled = false;
+                        rb.isKinematic = false;
+                        rb.velocity = lastVelocity;
+                        dying = true;
+                    }
+                    lastHeight = transform.position.y;
                 }
-
-                lastVelocity = control.velocity;
-                lastPosition = rb.position;
-
-                if (fallHeight > injuriousFallHeight)
+                else if (!pc.Grounded && paperPlane)
                 {
-                    lastFall = fallHeight;
-                    injuriousFall = true;
-                    deathType = "fall";
+                    lastVelocity = control.velocity;
+                    paperGliding = true;
                     pc.enabled = false;
                     control.enabled = false;
                     rb.isKinematic = false;
                     rb.velocity = lastVelocity;
-                    dying = true;
                 }
-                lastHeight = transform.position.y;
-            }
-            else
-            {
-                if (fallHeight > 0f)
+                else
                 {
-                    lastFall = fallHeight;
+                    if (fallHeight > 0f)
+                    {
+                        lastFall = fallHeight;
+                    }
+                    fallHeight = 0f;
+                    lastHeight = transform.position.y;
                 }
-                fallHeight = 0f;
-                lastHeight = transform.position.y;
             }
         }
+        
     }
 
     IEnumerator Death(string type)
@@ -190,27 +226,18 @@ public class Frailty : MonoBehaviour
         string firstStr = "";
         string secondStr = "";
         Vector3 firstScale = Vector3.zero;
-        Vector3 secondScale = Vector3.zero;
-        Vector3 scaleLerp = Vector3.zero;
-        Vector3 rotLerp = Vector3.zero;
-        float ninetyInRads = 90 * Mathf.Deg2Rad; 
-        float oneEightyInRads = 180 * Mathf.Deg2Rad;
-        float twoSeventyInRads = 270 * Mathf.Deg2Rad;
-        float threeSixtyInRads = 360 * Mathf.Deg2Rad;
 
         if (type == "fall")
         {
             firstStr = messageDeadFallA;
             secondStr = messageDeadFallB;
-            firstScale = messageScaleDeadFallA;
-            secondScale = messageScaleDeadFallB;
+            firstScale = messageScaleDeadFall;
         }
         else if (type == "kill")
         {
             firstStr = new string($"{messageDeadKillA} {killingObject.name} {messageDeadKillB}");
             secondStr = messageDeadKillC;
-            firstScale = messageScaleDeadKillA;
-            secondScale = messageScaleDeadKillC;
+            firstScale = messageScaleDeadKill;
         }
 
         narrationText.GetComponent<TextMeshPro> ().text = firstStr;
@@ -230,31 +257,25 @@ public class Frailty : MonoBehaviour
                 lerp = 1f;
             }
             messageGO.transform.position = Vector3.Lerp(cam.transform.position + (cam.transform.forward * messagePositionFar.z), cam.transform.position + (cam.transform.forward * messagePositionClose.z), lerp);
-            Debug.Log(Vector3.Distance(messageGO.transform.position, cam.transform.position + (cam.transform.forward * messagePositionClose.z)));
             yield return null;
         }
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
 
         lerp = 0f;
 
         while (lerp < 1f)
         {
-            lerp += 0.5f * Time.fixedDeltaTime;
+            lerp += 5f * Time.fixedDeltaTime;
             if (lerp > 1f)
             {
                 lerp = 1f;
             }
-            rotLerp = Vector3.Lerp(new Vector3(0,0,0), new Vector3(ninetyInRads, 0,0), lerp);
-            scaleLerp = Vector3.Lerp(firstScale, secondScale, lerp);
-            Debug.Log(rotLerp);
-            messageBox.transform.localScale.Set(scaleLerp.x, scaleLerp.y, scaleLerp.z);
-            messageBox.transform.localEulerAngles.Set(rotLerp.x, rotLerp.y, rotLerp.z);
+            messageGO.transform.position = Vector3.Lerp(cam.transform.position + (cam.transform.forward * messagePositionClose.z), cam.transform.position + (cam.transform.forward * messagePositionFar.z), lerp);
             yield return null;
         }
 
         narrationText.GetComponent<TextMeshPro>().text = secondStr;
-        Debug.Log(secondStr);
         narrationCamera.GetComponent<Camera>().Render();
         yield return null;
 
@@ -262,38 +283,31 @@ public class Frailty : MonoBehaviour
 
         while (lerp < 1f)
         {
-            lerp += 0.5f * Time.fixedDeltaTime;
+            lerp += 5f * Time.fixedDeltaTime;
             if (lerp > 1f)
             {
                 lerp = 1f;
             }
-            rotLerp = Vector3.Lerp(new Vector3(ninetyInRads, 0, 0), new Vector3(oneEightyInRads, 0, 0), lerp);
-            Debug.Log(rotLerp);
-            messageBox.transform.localEulerAngles.Set(rotLerp.x, rotLerp.y, rotLerp.z);
+            messageGO.transform.position = Vector3.Lerp(cam.transform.position + (cam.transform.forward * messagePositionFar.z), cam.transform.position + (cam.transform.forward * messagePositionClose.z), lerp);
             yield return null;
         }
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
 
         lerp = 0f;
 
         while (lerp < 1f)
         {
-            lerp += 0.5f * Time.fixedDeltaTime;
+            lerp += 5f * Time.fixedDeltaTime;
             if (lerp > 1f)
             {
                 lerp = 1f;
             }
-            rotLerp = Vector3.Lerp(new Vector3(oneEightyInRads, 0, 0), new Vector3(twoSeventyInRads, 0, 0), lerp);
-            Debug.Log(rotLerp);
-            scaleLerp = Vector3.Lerp(secondScale, messageScalePressAnyKey, lerp);
-            messageBox.transform.localScale.Set(scaleLerp.x, scaleLerp.y, scaleLerp.z);
-            messageBox.transform.localEulerAngles.Set(rotLerp.x, rotLerp.y, rotLerp.z);
+            messageGO.transform.position = Vector3.Lerp(cam.transform.position + (cam.transform.forward * messagePositionClose.z), cam.transform.position + (cam.transform.forward * messagePositionFar.z), lerp);
             yield return null;
         }
 
         narrationText.GetComponent<TextMeshPro>().text = messagePressAnyKey;
-        Debug.Log(messagePressAnyKey);
         narrationCamera.GetComponent<Camera>().Render();
         yield return null;
 
@@ -301,14 +315,12 @@ public class Frailty : MonoBehaviour
 
         while (lerp < 1f)
         {
-            lerp += 0.5f * Time.fixedDeltaTime;
+            lerp += 5f * Time.fixedDeltaTime;
             if (lerp > 1f)
             {
                 lerp = 1f;
             }
-            rotLerp = Vector3.Lerp(new Vector3(oneEightyInRads, 0, 0), new Vector3(twoSeventyInRads, 0, 0), lerp);
-            Debug.Log(rotLerp);
-            messageBox.transform.localEulerAngles.Set(rotLerp.x, rotLerp.y, rotLerp.z);
+            messageGO.transform.position = Vector3.Lerp(cam.transform.position + (cam.transform.forward * messagePositionFar.z), cam.transform.position + (cam.transform.forward * messagePositionClose.z), lerp);
             yield return null;
         }
     }
