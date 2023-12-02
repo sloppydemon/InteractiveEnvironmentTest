@@ -11,6 +11,8 @@ TagManager:
   - Movable
   - Floor
   - Magpie
+  - Narration
+  - NarrationBox
   layers:
   - Default
   - TransparentFX

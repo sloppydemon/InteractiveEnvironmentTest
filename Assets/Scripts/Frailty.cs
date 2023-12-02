@@ -1,6 +1,7 @@
 using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.Rendering.Fullscreen.ShaderGraph;
 using UnityEngine;
 using UnityEngine.InputSystem.Processors;
@@ -14,6 +15,24 @@ public class Frailty : MonoBehaviour
     CharacterController control;
     public float injuriousFallHeight;
     public float killingImpulse;
+    public Vector3 messagePositionClose;
+    public Vector3 messagePositionFar;
+    public string messageDeadFallA;
+    public string messageDeadFallB;
+    public Vector3 messageScaleDeadFallA;
+    public Vector3 messageScaleDeadFallB;
+    public Vector3 messageScalePressAnyKey;
+    public string messageDeadKillA;
+    public string messageDeadKillB;
+    public string messageDeadKillC;
+    public Vector3 messageScaleDeadKillA;
+    public Vector3 messageScaleDeadKillC;
+    public string messagePressAnyKey;
+    public GameObject messageGO;
+    public GameObject messageBox;
+    public GameObject narrationCamera;
+    public GameObject narrationText;
+
     [SerializeField]
     float fallHeight;
     [SerializeField]
@@ -33,6 +52,8 @@ public class Frailty : MonoBehaviour
     bool dying;
     public bool dead;
     Camera cam;
+    [SerializeField]
+    string deathType;
 
     void Start()
     {
@@ -48,6 +69,8 @@ public class Frailty : MonoBehaviour
         injuriousFall = false;
         dying = false;
         killingObject = null;
+        messageGO.SetActive(false);
+        deathType = "None";
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -69,6 +92,7 @@ public class Frailty : MonoBehaviour
                 Time.timeScale = 0.1f;
                 Time.fixedDeltaTime = 0.002f;
                 killingObject = collision.gameObject;
+                deathType = "kill";
             }
         }
 
@@ -113,6 +137,9 @@ public class Frailty : MonoBehaviour
                     Time.timeScale = 1f;
                     Time.fixedDeltaTime = 0.02f;
                     dead = true;
+                    StartCoroutine(Death(deathType));
+
+
                 }
             }
         }
@@ -137,10 +164,10 @@ public class Frailty : MonoBehaviour
                 {
                     lastFall = fallHeight;
                     injuriousFall = true;
+                    deathType = "fall";
                     pc.enabled = false;
                     control.enabled = false;
                     rb.isKinematic = false;
-                    //rb.AddTorque(new Vector3(Random.Range(-0.2f, -0.2f), Random.Range(-0.2f, 0.2f), Random.Range(-0.2f, 0.2f)));
                     rb.velocity = lastVelocity;
                     dying = true;
                 }
@@ -155,6 +182,134 @@ public class Frailty : MonoBehaviour
                 fallHeight = 0f;
                 lastHeight = transform.position.y;
             }
+        }
+    }
+
+    IEnumerator Death(string type)
+    {
+        string firstStr = "";
+        string secondStr = "";
+        Vector3 firstScale = Vector3.zero;
+        Vector3 secondScale = Vector3.zero;
+        Vector3 scaleLerp = Vector3.zero;
+        Vector3 rotLerp = Vector3.zero;
+        float ninetyInRads = 90 * Mathf.Deg2Rad; 
+        float oneEightyInRads = 180 * Mathf.Deg2Rad;
+        float twoSeventyInRads = 270 * Mathf.Deg2Rad;
+        float threeSixtyInRads = 360 * Mathf.Deg2Rad;
+
+        if (type == "fall")
+        {
+            firstStr = messageDeadFallA;
+            secondStr = messageDeadFallB;
+            firstScale = messageScaleDeadFallA;
+            secondScale = messageScaleDeadFallB;
+        }
+        else if (type == "kill")
+        {
+            firstStr = new string($"{messageDeadKillA} {killingObject.name} {messageDeadKillB}");
+            secondStr = messageDeadKillC;
+            firstScale = messageScaleDeadKillA;
+            secondScale = messageScaleDeadKillC;
+        }
+
+        narrationText.GetComponent<TextMeshPro> ().text = firstStr;
+        narrationCamera.GetComponent<Camera>().Render();
+        messageGO.transform.position = cam.transform.position + messagePositionFar;
+        messageBox.transform.localScale = firstScale;
+        messageGO.SetActive(true);
+        yield return null;
+
+        float lerp = 0f;
+
+        while (Vector3.Distance(messageGO.transform.position, cam.transform.position + (cam.transform.forward * messagePositionClose.z)) > 0f)
+        {
+            lerp += 0.5f * Time.fixedDeltaTime;
+            if (lerp > 1f)
+            {
+                lerp = 1f;
+            }
+            messageGO.transform.position = Vector3.Lerp(cam.transform.position + (cam.transform.forward * messagePositionFar.z), cam.transform.position + (cam.transform.forward * messagePositionClose.z), lerp);
+            Debug.Log(Vector3.Distance(messageGO.transform.position, cam.transform.position + (cam.transform.forward * messagePositionClose.z)));
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(3);
+
+        lerp = 0f;
+
+        while (lerp < 1f)
+        {
+            lerp += 0.5f * Time.fixedDeltaTime;
+            if (lerp > 1f)
+            {
+                lerp = 1f;
+            }
+            rotLerp = Vector3.Lerp(new Vector3(0,0,0), new Vector3(ninetyInRads, 0,0), lerp);
+            scaleLerp = Vector3.Lerp(firstScale, secondScale, lerp);
+            Debug.Log(rotLerp);
+            messageBox.transform.localScale.Set(scaleLerp.x, scaleLerp.y, scaleLerp.z);
+            messageBox.transform.localEulerAngles.Set(rotLerp.x, rotLerp.y, rotLerp.z);
+            yield return null;
+        }
+
+        narrationText.GetComponent<TextMeshPro>().text = secondStr;
+        Debug.Log(secondStr);
+        narrationCamera.GetComponent<Camera>().Render();
+        yield return null;
+
+        lerp = 0f;
+
+        while (lerp < 1f)
+        {
+            lerp += 0.5f * Time.fixedDeltaTime;
+            if (lerp > 1f)
+            {
+                lerp = 1f;
+            }
+            rotLerp = Vector3.Lerp(new Vector3(ninetyInRads, 0, 0), new Vector3(oneEightyInRads, 0, 0), lerp);
+            Debug.Log(rotLerp);
+            messageBox.transform.localEulerAngles.Set(rotLerp.x, rotLerp.y, rotLerp.z);
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(3);
+
+        lerp = 0f;
+
+        while (lerp < 1f)
+        {
+            lerp += 0.5f * Time.fixedDeltaTime;
+            if (lerp > 1f)
+            {
+                lerp = 1f;
+            }
+            rotLerp = Vector3.Lerp(new Vector3(oneEightyInRads, 0, 0), new Vector3(twoSeventyInRads, 0, 0), lerp);
+            Debug.Log(rotLerp);
+            scaleLerp = Vector3.Lerp(secondScale, messageScalePressAnyKey, lerp);
+            messageBox.transform.localScale.Set(scaleLerp.x, scaleLerp.y, scaleLerp.z);
+            messageBox.transform.localEulerAngles.Set(rotLerp.x, rotLerp.y, rotLerp.z);
+            yield return null;
+        }
+
+        narrationText.GetComponent<TextMeshPro>().text = messagePressAnyKey;
+        Debug.Log(messagePressAnyKey);
+        narrationCamera.GetComponent<Camera>().Render();
+        yield return null;
+
+        lerp = 0f;
+
+        while (lerp < 1f)
+        {
+            lerp += 0.5f * Time.fixedDeltaTime;
+            if (lerp > 1f)
+            {
+                lerp = 1f;
+            }
+            rotLerp = Vector3.Lerp(new Vector3(oneEightyInRads, 0, 0), new Vector3(twoSeventyInRads, 0, 0), lerp);
+            Debug.Log(rotLerp);
+            messageBox.transform.localEulerAngles.Set(rotLerp.x, rotLerp.y, rotLerp.z);
+            yield return null;
         }
     }
 }
