@@ -1730,7 +1730,7 @@ GameObject:
   - component: {fileID: 790465502}
   m_Layer: 8
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1899,16 +1899,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   injuriousFallHeight: 0.5
   killingImpulse: 2
+  glideBreakingImpulse: 0.2
   messagePositionClose: {x: 0, y: 0, z: 0.42}
   messagePositionFar: {x: 0, y: 0, z: 26.96}
   messageDeadFallA: It seems you may have fallen and perhaps hit your head...
   messageDeadFallB: ... or are you dreaming?
   messageScaleDeadFall: {x: 0.4, y: 0.05, z: 0.0062325583}
   messageScalePressAnyKey: {x: 0.4, y: 0.05, z: 0.0062325583}
-  messageDeadKillA: I don't think
-  messageDeadKillB: likes you much...
+  messageDeadKillA: 'I don''t think '
+  messageDeadKillB: ' likes you much...'
   messageDeadKillC: ...if they did, would they hurt you like this?
   messageScaleDeadKill: {x: 0.4, y: 0.05, z: 0.0062325583}
+  messageDeadGlideA: 'Ok, so maybe you really like '
+  messageDeadGlideB: ...
+  messageDeadGlideC: ... but you don't have to throw yourself at them like that!
+  messageScaleDeadGlide: {x: 0.4, y: 0.05, z: 0.0062325583}
+  messageDeadCrashA: Like some sort of reverse Icarus...
+  messageDeadCrashB: ... you flew too close to the ground!
+  messageScaleDeadCrash: {x: 0.4, y: 0.05, z: 0.0062325583}
   messagePressAnyKey: (It's safe to press any key to continue now, by the way.)
   messageGO: {fileID: 722511479}
   messageBox: {fileID: 1000516935}
@@ -2664,8 +2672,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1790815952659468105, guid: e7aba5b883e8cee48b08b92bfeb8305e, type: 3}
   m_PrefabInstance: {fileID: 9204925565151248514}
   m_PrefabAsset: {fileID: 0}
---- !u!135 &1232491704
-SphereCollider:
+--- !u!136 &1232491706
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2682,9 +2690,11 @@ SphereCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Radius: 0.055
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Height: 0.16
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: -0.03}
 --- !u!4 &1236762286 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8930614845976750335, guid: 6b4304c1e4422754581a9c87b337423c, type: 3}
@@ -4746,12 +4756,13 @@ MonoBehaviour:
   attached: 0
   attachedTo: {fileID: 0}
   controlled: 1
-  jointAnchor: {x: 0, y: 0, z: -0.01}
+  jointAnchor: {x: 0, y: 0, z: -0.04}
   jointAxis: {x: 0, y: 0, z: 1}
   attachAnchor: {x: 0, y: 0.05, z: 0.0075}
-  springSpring: 0.5
+  springSpring: 5
   springDamping: 0
   springTarget: 0
+  player: {fileID: 918156100}
   attachPos: {x: 0, y: 0.05, z: 0.2}
 --- !u!1 &1785711626
 GameObject:
@@ -6009,43 +6020,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 86407970256881544, guid: 4e622ed41d985fb41b67923b0a8c3188, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.21340516
+      value: 0.197
       objectReference: {fileID: 0}
     - target: {fileID: 86407970256881544, guid: 4e622ed41d985fb41b67923b0a8c3188, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.97737706
+      value: 0.815
       objectReference: {fileID: 0}
     - target: {fileID: 86407970256881544, guid: 4e622ed41d985fb41b67923b0a8c3188, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.11366874
+      value: 0.044
       objectReference: {fileID: 0}
     - target: {fileID: 86407970256881544, guid: 4e622ed41d985fb41b67923b0a8c3188, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.099155225
+      value: 0.98810047
       objectReference: {fileID: 0}
     - target: {fileID: 86407970256881544, guid: 4e622ed41d985fb41b67923b0a8c3188, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.020520432
       objectReference: {fileID: 0}
     - target: {fileID: 86407970256881544, guid: 4e622ed41d985fb41b67923b0a8c3188, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.008930659
       objectReference: {fileID: 0}
     - target: {fileID: 86407970256881544, guid: 4e622ed41d985fb41b67923b0a8c3188, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.99507207
+      value: 0.15217283
       objectReference: {fileID: 0}
     - target: {fileID: 86407970256881544, guid: 4e622ed41d985fb41b67923b0a8c3188, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -2.48
       objectReference: {fileID: 0}
     - target: {fileID: 86407970256881544, guid: 4e622ed41d985fb41b67923b0a8c3188, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 0.654
       objectReference: {fileID: 0}
     - target: {fileID: 86407970256881544, guid: 4e622ed41d985fb41b67923b0a8c3188, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 191.381
+      value: 17.496
       objectReference: {fileID: 0}
     - target: {fileID: 754681948426526002, guid: 4e622ed41d985fb41b67923b0a8c3188, type: 3}
       propertyPath: m_Name
@@ -6056,12 +6067,16 @@ PrefabInstance:
       value: Movable
       objectReference: {fileID: 0}
     - target: {fileID: 782322870054901738, guid: 4e622ed41d985fb41b67923b0a8c3188, type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 782322870054901738, guid: 4e622ed41d985fb41b67923b0a8c3188, type: 3}
       propertyPath: m_Mass
       value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 782322870054901738, guid: 4e622ed41d985fb41b67923b0a8c3188, type: 3}
       propertyPath: m_AngularDrag
-      value: 1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 4209668999777922873, guid: 4e622ed41d985fb41b67923b0a8c3188, type: 3}
       propertyPath: m_IncludeLayers.m_Bits
@@ -7210,7 +7225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2550353264830087265, guid: e7aba5b883e8cee48b08b92bfeb8305e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.051
+      value: 0.052
       objectReference: {fileID: 0}
     - target: {fileID: 2636937121700027815, guid: e7aba5b883e8cee48b08b92bfeb8305e, type: 3}
       propertyPath: m_Height
@@ -7275,6 +7290,10 @@ PrefabInstance:
     - target: {fileID: 6849027603350423986, guid: e7aba5b883e8cee48b08b92bfeb8305e, type: 3}
       propertyPath: strength
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7038625045229235511, guid: e7aba5b883e8cee48b08b92bfeb8305e, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8724656281692970944, guid: e7aba5b883e8cee48b08b92bfeb8305e, type: 3}
       propertyPath: Gravity
@@ -7359,7 +7378,7 @@ PrefabInstance:
       addedObject: {fileID: 918156108}
     - targetCorrespondingSourceObject: {fileID: 1790815952659468105, guid: e7aba5b883e8cee48b08b92bfeb8305e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1232491704}
+      addedObject: {fileID: 1232491706}
   m_SourcePrefab: {fileID: 100100000, guid: e7aba5b883e8cee48b08b92bfeb8305e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

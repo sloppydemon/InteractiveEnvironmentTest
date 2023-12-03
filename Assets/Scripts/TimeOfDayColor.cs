@@ -20,8 +20,6 @@ public class TimeOfDayColor : MonoBehaviour
         sunTemp = sun.colorTemperature;
         UdotL = Vector3.Dot(gameObject.transform.forward, Vector3.up);
         dotLerp = Mathf.SmoothStep(0f, 1f, -UdotL);
-        Debug.Log(UdotL.ToString());
-        Debug.Log(dotLerp.ToString());
         sun.colorTemperature = Mathf.Lerp(horizonTemperature, zenithTemperature, dotLerp);
     }
 

@@ -2,19 +2,24 @@ using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEditor.Rendering.Fullscreen.ShaderGraph;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Processors;
+using UnityEngine.InputSystem.UI;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UIElements;
 
 public class Frailty : MonoBehaviour
 {
-    Rigidbody rb;
+    Rigidbody body;
     CapsuleCollider coll;
     FirstPersonController pc;
     CharacterController control;
     public float injuriousFallHeight;
     public float killingImpulse;
+    public float glideBreakingImpulse;
     public Vector3 messagePositionClose;
     public Vector3 messagePositionFar;
     public string messageDeadFallA;
@@ -25,6 +30,13 @@ public class Frailty : MonoBehaviour
     public string messageDeadKillB;
     public string messageDeadKillC;
     public Vector3 messageScaleDeadKill;
+    public string messageDeadGlideA;
+    public string messageDeadGlideB;
+    public string messageDeadGlideC;
+    public Vector3 messageScaleDeadGlide;
+    public string messageDeadCrashA;
+    public string messageDeadCrashB;
+    public Vector3 messageScaleDeadCrash;
     public string messagePressAnyKey;
     public GameObject messageGO;
     public GameObject messageBox;
@@ -55,20 +67,27 @@ public class Frailty : MonoBehaviour
     public bool dead;
     [SerializeField]
     string deathType;
-    [SerializeField]
-    bool paperPlane;
-    [SerializeField]
-    bool paperGliding;
-    [SerializeField]
-    GameObject paperPlaneGO;
+    public bool paperPlane;
+    public bool paperGliding;
+    public GameObject paperPlaneGO;
     [SerializeField]
     bool magpieRiding;
+
+    float UdotD;
+    float UdotF;
+    float FdotV;
+    float DdotV;
+    Vector3 lift;
+    Vector3 glide;
+    float pitch;
+    float yaw;
+    float roll;
 
     void Start()
     {
         cam = Camera.main;
         pc = GetComponent<FirstPersonController>();
-        rb = GetComponent<Rigidbody>();
+        body = GetComponent<Rigidbody>();
         coll = GetComponent<CapsuleCollider>();
         control = GetComponent<CharacterController>();
         fallHeight = 0f;
@@ -85,50 +104,106 @@ public class Frailty : MonoBehaviour
         paperPlane = false;
         paperPlaneGO = null;
         magpieRiding = false;
+        UdotD = 0f;
+        UdotF = 0f;
+        FdotV = 0f;
+        lift = Vector3.zero;
+        glide = Vector3.zero;
+        pitch = 0f;
+        yaw = 0f;
+        roll = 0f;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.impulse.magnitude);
         if (collision.impulse.magnitude > killingImpulse)
         {
-            if (!dead && !dying)
+            if (!dead && !dying && collision.gameObject.tag != "Player" && collision.gameObject != paperPlaneGO)
             {
                 pc.enabled = false;
                 control.enabled = false;
-                rb.isKinematic = false;
+                body.isKinematic = false;
                 dying = true;
-                rb.AddForceAtPosition(-collision.impulse * 200, collision.GetContact(0).point);
-                rb.AddForce(new Vector3(0, collision.impulse.magnitude * 20f, 0));
-                rb.angularDrag = 0.5f;
+                if (paperGliding || paperPlane)
+                {
+                    paperGliding = false;
+                    paperPlane = false;
+                    paperPlaneGO.GetComponent<PaperPlaneControl>().Detach();
+                    deathType = "glide";
+                }
+                else
+                {
+                    deathType = "kill";
+                }
+                body.AddForceAtPosition(-collision.impulse * 200, collision.GetContact(0).point);
+                body.AddForce(new Vector3(0, collision.impulse.magnitude * 20f, 0));
+                body.angularDrag = 0.5f;
                 Time.timeScale = 0.1f;
                 Time.fixedDeltaTime = 0.002f;
                 killingObject = collision.gameObject;
-                deathType = "kill";
             }
         }
 
         if (paperGliding)
         {
-            if (collision.gameObject.tag == "Floor")
+            if (Vector3.Dot(collision.GetContact(0).normal, Vector3.up) > 0.75f)
             {
-                pc.enabled = true;
-                control.enabled = true;
-                rb.isKinematic = true;
-                paperGliding = false;
-
+                if (Vector3.Dot(transform.up, Vector3.up) > 0.8f)
+                {
+                    lastHeight = transform.position.y;
+                    paperGliding = false;
+                    paperPlane = false;
+                    paperPlaneGO.GetComponent<PaperPlaneControl>().Detach();
+                    control.enabled = true;
+                    pc.enabled = true;
+                    body.isKinematic = true;
+                    transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, 0));
+                }
+                else
+                {
+                    paperGliding = false;
+                    paperPlane = false;
+                    paperPlaneGO.GetComponent<PaperPlaneControl>().Detach();
+                    dying = true;
+                    deathType = "crash";
+                    body.AddForceAtPosition(-collision.impulse * 200, collision.GetContact(0).point);
+                    body.AddForce(new Vector3(0, collision.impulse.magnitude * 20f, 0));
+                    body.angularDrag = 0.5f;
+                    Time.timeScale = 0.1f;
+                    Time.fixedDeltaTime = 0.002f;
+                    //killingObject = collision.gameObject;
+                }
+            }
+            else
+            {
+                if (collision.impulse.magnitude > glideBreakingImpulse)
+                {
+                    paperGliding = false;
+                    paperPlane = false;
+                    paperPlaneGO.GetComponent<PaperPlaneControl>().Detach();
+                    dying = true;
+                    deathType = "glide";
+                    body.AddForceAtPosition(-collision.impulse * 200, collision.GetContact(0).point);
+                    body.AddForce(new Vector3(0, collision.impulse.magnitude * 20f, 0));
+                    body.angularDrag = 0.5f;
+                    Time.timeScale = 0.1f;
+                    Time.fixedDeltaTime = 0.002f;
+                    killingObject = collision.gameObject;
+                }
             }
         }
 
         if (injuriousFall)
         {
-            rb.angularDrag = 0.5f;
+            body.angularDrag = 0.5f;
             if (!dead)
             {
                 Time.timeScale = 0.1f;
                 Time.fixedDeltaTime = 0.002f;
-                rb.AddForceAtPosition(-collision.impulse * 5, collision.GetContact(0).point);
-                rb.AddForce(new Vector3(0, collision.impulse.magnitude, 0));
-                rb.AddTorque(new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f)));
+                body.AddForceAtPosition(-collision.impulse * 5, collision.GetContact(0).point);
+                body.AddForce(new Vector3(0, collision.impulse.magnitude, 0));
+                body.AddTorque(new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f)));
             }
         }
     }
@@ -139,7 +214,7 @@ public class Frailty : MonoBehaviour
         {
             if(!dead)
             {
-                if (other.gameObject.tag != "Player" && other.gameObject != killingObject)
+                if (other.gameObject.tag != "Player" && other.gameObject != killingObject && other.gameObject != paperPlaneGO)
                 {
                     GameObject[] destroyList = GameObject.FindGameObjectsWithTag("Floor");
                     for (int i = 0; i < destroyList.Length; i++)
@@ -174,7 +249,7 @@ public class Frailty : MonoBehaviour
         {
             if (!injuriousFall)
             {
-                if (!pc.Grounded && !paperPlane)
+                if (!pc.Grounded && !paperPlane && !dying)
                 {
                     fallDifference = transform.position.y - lastHeight;
                     if (-fallDifference > 0f)
@@ -183,7 +258,7 @@ public class Frailty : MonoBehaviour
                     }
 
                     lastVelocity = control.velocity;
-                    lastPosition = rb.position;
+                    lastPosition = body.position;
 
                     if (fallHeight > injuriousFallHeight)
                     {
@@ -192,20 +267,20 @@ public class Frailty : MonoBehaviour
                         deathType = "fall";
                         pc.enabled = false;
                         control.enabled = false;
-                        rb.isKinematic = false;
-                        rb.velocity = lastVelocity;
+                        body.isKinematic = false;
+                        body.velocity = lastVelocity;
                         dying = true;
                     }
                     lastHeight = transform.position.y;
                 }
                 else if (!pc.Grounded && paperPlane)
                 {
-                    lastVelocity = control.velocity;
+                    lastVelocity = Vector3.Max(control.velocity, body.velocity);
                     paperGliding = true;
                     pc.enabled = false;
                     control.enabled = false;
-                    rb.isKinematic = false;
-                    rb.velocity = lastVelocity;
+                    body.isKinematic = false;
+                    body.velocity = lastVelocity;
                 }
                 else
                 {
@@ -218,6 +293,27 @@ public class Frailty : MonoBehaviour
                 }
             }
         }
+
+        if (paperGliding)
+        {
+            UdotD = Vector3.Dot(transform.up, Vector3.up);
+            FdotV = Vector3.Dot(body.velocity.normalized, transform.forward);
+            UdotF = Vector3.Dot(transform.forward, Vector3.up);
+            DdotV = Vector3.Dot(body.velocity.normalized, transform.up);
+
+            lift = -Physics.gravity * Mathf.Clamp(FdotV, 0f, 1f) * body.velocity.magnitude * 6f * /*Mathf.Abs(UdotD) **/ Time.deltaTime;
+            glide = transform.forward * -UdotF * 20f * Time.deltaTime;
+            pitch = -Input.GetAxis("Mouse Y") * 100f * Time.deltaTime;
+            roll = -Input.GetAxis("Mouse X") * 100f * Time.deltaTime;
+            yaw = Input.GetAxis("Mouse X") * 100f * Time.deltaTime;
+
+            body.transform.Rotate(pitch, yaw, roll);
+            body.AddForce(lift + glide);
+        }
+    }
+
+    private void FixedUpdate()
+    {
         
     }
 
@@ -235,9 +331,21 @@ public class Frailty : MonoBehaviour
         }
         else if (type == "kill")
         {
-            firstStr = new string($"{messageDeadKillA} {killingObject.name} {messageDeadKillB}");
+            firstStr = new string($"{messageDeadKillA}{killingObject.name}{messageDeadKillB}");
             secondStr = messageDeadKillC;
             firstScale = messageScaleDeadKill;
+        }
+        else if (type == "glide")
+        {
+            firstStr = new string($"{messageDeadGlideA}{killingObject.name}{messageDeadGlideB}");
+            secondStr = messageDeadGlideC;
+            firstScale = messageScaleDeadGlide;
+        }
+        else if (type == "crash")
+        {
+            firstStr = messageDeadCrashA;
+            secondStr = messageDeadCrashB;
+            firstScale = messageScaleDeadCrash;
         }
 
         narrationText.GetComponent<TextMeshPro> ().text = firstStr;
