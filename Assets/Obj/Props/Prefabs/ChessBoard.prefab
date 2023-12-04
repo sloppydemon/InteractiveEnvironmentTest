@@ -62,6 +62,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3c6deb4b35419744fa121f033485387b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7575436887761277687}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3c6deb4b35419744fa121f033485387b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 192046406928217006}
   m_SourcePrefab: {fileID: 100100000, guid: 3c6deb4b35419744fa121f033485387b, type: 3}
 --- !u!1 &368113594783367291 stripped
 GameObject:
@@ -116,3 +119,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &192046406928217006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368113594783367291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a7105e5cd564c540b7e1fd1de38a340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perchable: 0
+  perchType: {fileID: 0}
+  floor: 0
+  canTake: 0
+  canGrab: 1
+  canPush: 0
+  canMount: 0
+  canCommunicate: 0
+  displayName: chessboard
+  killerName: that chessboard
+  idScale: {x: 0, y: 0, z: 0}
+  idOffset: {x: 0, y: 0, z: 0}

@@ -78,6 +78,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 977f81e35ef098b4a8e685e09cc379c5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 888598047711269377}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 977f81e35ef098b4a8e685e09cc379c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4919925995796234935}
   m_SourcePrefab: {fileID: 100100000, guid: 977f81e35ef098b4a8e685e09cc379c5, type: 3}
 --- !u!1 &4453758530666166061 stripped
 GameObject:
@@ -133,3 +136,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4919925995796234935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4453758530666166061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a7105e5cd564c540b7e1fd1de38a340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perchable: 0
+  perchType: {fileID: 0}
+  floor: 0
+  canTake: 0
+  canGrab: 1
+  canPush: 0
+  canMount: 0
+  canCommunicate: 0
+  displayName: black knight
+  killerName: that black knight
+  idScale: {x: 0, y: 0, z: 0}
+  idOffset: {x: 0, y: 0, z: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7395327413147302494}
   m_Layer: 8
   m_Name: PF_cursorGrab
-  m_TagString: Untagged
+  m_TagString: Cursor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +99,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0cd96b7fc6f66514e9edaf78632d6026, type: 3}
       propertyPath: m_Name
       value: cursorGrab
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0cd96b7fc6f66514e9edaf78632d6026, type: 3}
+      propertyPath: m_TagString
+      value: Cursor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -321,6 +321,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0a82748c409d5754c8fa1f1610026a59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5091988281811093978}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0a82748c409d5754c8fa1f1610026a59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1947798622627594912}
   m_SourcePrefab: {fileID: 100100000, guid: 0a82748c409d5754c8fa1f1610026a59, type: 3}
 --- !u!4 &4856030583650775932 stripped
 Transform:
@@ -485,6 +488,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1947798622627594912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5201594601070111174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a7105e5cd564c540b7e1fd1de38a340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perchable: 0
+  perchType: {fileID: 0}
+  floor: 0
+  canTake: 0
+  canGrab: 0
+  canPush: 0
+  canMount: 0
+  canCommunicate: 0
+  displayName: wall
+  killerName: walls
+  idScale: {x: 0, y: 0, z: 0}
+  idOffset: {x: 0, y: 0, z: 0}
 --- !u!1001 &6134851368535166671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -547,6 +574,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 15ccf798896b239408edcfab6fa05f45, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8741847494350885642}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 15ccf798896b239408edcfab6fa05f45, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8835887581926970470}
   m_SourcePrefab: {fileID: 100100000, guid: 15ccf798896b239408edcfab6fa05f45, type: 3}
 --- !u!4 &5956546715172923684 stripped
 Transform:
@@ -577,8 +607,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.06526023, y: 0, z: 0.9294396}
+  m_Center: {x: -0.024754778, y: 0.5, z: -0.45864597}
 --- !u!54 &8741847494350885642
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -606,3 +636,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8835887581926970470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6476799692609336222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a7105e5cd564c540b7e1fd1de38a340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perchable: 0
+  perchType: {fileID: 0}
+  floor: 0
+  canTake: 0
+  canGrab: 0
+  canPush: 1
+  canMount: 0
+  canCommunicate: 0
+  displayName: door
+  killerName: doors
+  idScale: {x: 0, y: 0, z: 0}
+  idOffset: {x: 0, y: 0, z: 0}

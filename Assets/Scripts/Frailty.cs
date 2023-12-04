@@ -303,7 +303,7 @@ public class Frailty : MonoBehaviour
 
             lift = -Physics.gravity * Mathf.Clamp(FdotV, 0f, 1f) * body.velocity.magnitude * 6f * /*Mathf.Abs(UdotD) **/ Time.deltaTime;
             glide = transform.forward * -UdotF * 20f * Time.deltaTime;
-            pitch = -Input.GetAxis("Mouse Y") * 100f * Time.deltaTime;
+            pitch = Input.GetAxis("Mouse Y") * 100f * Time.deltaTime;
             roll = -Input.GetAxis("Mouse X") * 100f * Time.deltaTime;
             yaw = Input.GetAxis("Mouse X") * 100f * Time.deltaTime;
 
@@ -332,13 +332,13 @@ public class Frailty : MonoBehaviour
         }
         else if (type == "kill")
         {
-            firstStr = new string($"{messageDeadKillA}{killingObject.name}{messageDeadKillB}");
+            firstStr = new string($"{messageDeadKillA}{killingObject.GetComponent<Keywords>().killerName}{messageDeadKillB}");
             secondStr = messageDeadKillC;
             firstScale = messageScaleDeadKill;
         }
         else if (type == "glide")
         {
-            firstStr = new string($"{messageDeadGlideA}{killingObject.name}{messageDeadGlideB}");
+            firstStr = new string($"{messageDeadGlideA}{killingObject.GetComponent<Keywords>().killerName}{messageDeadGlideB}");
             secondStr = messageDeadGlideC;
             firstScale = messageScaleDeadGlide;
         }

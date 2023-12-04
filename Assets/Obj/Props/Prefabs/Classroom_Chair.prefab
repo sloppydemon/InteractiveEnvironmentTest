@@ -77,6 +77,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: edb77eb1f835ab049a46ef831777fa1d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8845119953463420540}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: edb77eb1f835ab049a46ef831777fa1d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 745523744782337711}
   m_SourcePrefab: {fileID: 100100000, guid: edb77eb1f835ab049a46ef831777fa1d, type: 3}
 --- !u!1 &6752047970170804132 stripped
 GameObject:
@@ -244,3 +247,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &745523744782337711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6752047970170804132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a7105e5cd564c540b7e1fd1de38a340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perchable: 1
+  perchType: {fileID: 0}
+  floor: 0
+  canTake: 0
+  canGrab: 0
+  canPush: 1
+  canMount: 0
+  canCommunicate: 0
+  displayName: chair
+  killerName: chairs
+  idScale: {x: 0, y: 0, z: 0}
+  idOffset: {x: 0, y: 0, z: 0}

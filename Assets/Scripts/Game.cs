@@ -14,6 +14,7 @@ public class Game : MonoBehaviour
     public GameObject cursorGrab;
     public GameObject cursorTake;
     public GameObject cursorMount;
+    public GameObject cursorLook;
 
     void Start()
     {

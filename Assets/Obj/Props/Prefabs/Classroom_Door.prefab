@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1337383553239609893}
   - component: {fileID: 8033414697689264858}
   - component: {fileID: 3542847727881503987}
+  - component: {fileID: 3267981002544133887}
   m_Layer: 0
   m_Name: DoorHandle
   m_TagString: Untagged
@@ -199,6 +200,30 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &3267981002544133887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2204381998163515807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a7105e5cd564c540b7e1fd1de38a340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perchable: 0
+  perchType: {fileID: 0}
+  floor: 0
+  canTake: 0
+  canGrab: 1
+  canPush: 0
+  canMount: 0
+  canCommunicate: 0
+  displayName: doorhandle
+  killerName: that doorhandle
+  idScale: {x: 0, y: 0, z: 0}
+  idOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &4958645847608154385
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,6 +238,7 @@ GameObject:
   - component: {fileID: 6903587009037054669}
   - component: {fileID: 2309805870485944968}
   - component: {fileID: 2752082055233315805}
+  - component: {fileID: -7225078819304670341}
   m_Layer: 0
   m_Name: Classroom_Door
   m_TagString: Untagged
@@ -374,3 +400,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.033336163, y: 2.1632867, z: 0.926003}
   m_Center: {x: -0.016667843, y: 1.0808327, z: -0.46300173}
+--- !u!114 &-7225078819304670341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4958645847608154385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a7105e5cd564c540b7e1fd1de38a340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perchable: 0
+  perchType: {fileID: 0}
+  floor: 0
+  canTake: 0
+  canGrab: 0
+  canPush: 1
+  canMount: 0
+  canCommunicate: 0
+  displayName: door
+  killerName: that door
+  idScale: {x: 0, y: 0, z: 0}
+  idOffset: {x: 0, y: 0, z: 0}

@@ -78,6 +78,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7bc8fe62646cedc40a7c2b839c56dfaf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6936199341681405028}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7bc8fe62646cedc40a7c2b839c56dfaf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7261913757008709178}
   m_SourcePrefab: {fileID: 100100000, guid: 7bc8fe62646cedc40a7c2b839c56dfaf, type: 3}
 --- !u!1 &1313651688165407109 stripped
 GameObject:
@@ -133,3 +136,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-7261913757008709178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313651688165407109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a7105e5cd564c540b7e1fd1de38a340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perchable: 0
+  perchType: {fileID: 0}
+  floor: 0
+  canTake: 0
+  canGrab: 1
+  canPush: 0
+  canMount: 0
+  canCommunicate: 0
+  displayName: white rook
+  killerName: that white rook
+  idScale: {x: 0, y: 0, z: 0}
+  idOffset: {x: 0, y: 0, z: 0}

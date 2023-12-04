@@ -84,7 +84,7 @@ public class PaperPlaneControl : MonoBehaviour
             glide = transform.forward * -UdotF * 20f * Time.deltaTime;
             if (attached && controlled)
             {
-                pitch = -Input.GetAxis("Mouse Y") * 100f * Time.deltaTime;
+                pitch = Input.GetAxis("Mouse Y") * 100f * Time.deltaTime;
                 roll = -Input.GetAxis("Mouse X") * 100f * Time.deltaTime;
                 yaw = Input.GetAxis("Mouse X") * 100f * Time.deltaTime;
             }

@@ -22,7 +22,7 @@ public class Keywords : MonoBehaviour
     
     Camera cam;
     Game game;
-    GameObject idCube;
+    GameObject idNote;
     GameObject idCursor;
     bool id;
     Ray ray;
@@ -33,7 +33,7 @@ public class Keywords : MonoBehaviour
     {
         cam = Camera.main;
         game = GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>();
-        idCube = null;
+        idNote = null;
         id = false;
         idCursor = null;
     }
@@ -55,8 +55,17 @@ public class Keywords : MonoBehaviour
         {
             if (id)
             {
-                idCursor.transform.position = RayCaster() + (0.02f * hitInfo.normal);
-                idCursor.transform.rotation = Quaternion.Euler(-ray.direction);
+                
+                if (canPush)
+                {
+                    idCursor.transform.position = RayCaster() + (0.001f * hitInfo.normal);
+                    idCursor.transform.rotation = Quaternion.LookRotation(hitInfo.normal);
+                }
+                else
+                {
+                    idCursor.transform.position = RayCaster() + (0.02f * hitInfo.normal);
+                    idCursor.transform.rotation = Quaternion.LookRotation(-ray.direction, Vector3.up);
+                }
             }
             else
             {
@@ -71,8 +80,8 @@ public class Keywords : MonoBehaviour
         {
             Destroy(idCursor);
             idCursor = null;
-            Destroy(idCube);
-            idCube = null;
+            Destroy(idNote);
+            idNote = null;
             id = false;
         }
     }
@@ -80,7 +89,7 @@ public class Keywords : MonoBehaviour
     void Identify()
     {
         game.idText.text = displayName;
-        game.GetComponent<Camera>().Render();
+        game.idCamera.Render();
         id = true;
         GameObject idCursorSelect = null;
         if (canCommunicate)
@@ -103,8 +112,12 @@ public class Keywords : MonoBehaviour
         {
             idCursorSelect = game.cursorMount;
         }
-        idCursor = Instantiate(idCursorSelect, RayCaster() + (0.02f * hitInfo.normal), Quaternion.Euler(-ray.direction), game.transform);
-        idCube = Instantiate(game.idPrefab, idCursor.transform.position + (0.01f * Vector3.up), idCursor.transform.rotation, game.transform);
+        else
+        {
+            idCursorSelect = game.cursorLook;
+        }
+        idCursor = Instantiate(idCursorSelect, RayCaster() + (0.02f * hitInfo.normal), Quaternion.LookRotation(-ray.direction, Vector3.up), game.transform);
+        idNote = Instantiate(game.idPrefab, hitInfo.point + (0.002f*hitInfo.normal), Quaternion.LookRotation(hitInfo.normal), game.transform);
     }
 
     public Vector3 RayCaster()
