@@ -15,6 +15,10 @@ public class PaperPlaneControl : MonoBehaviour
     public float springSpring;
     public float springDamping;
     public float springTarget;
+    public AudioClip[] audioPaperHit;
+    public AudioClip[] audioPaperMove;
+    public AudioClip audioPaperFlight;
+    public AudioClip audioPaperTake;
     JointSpring jointSpring;
     Rigidbody body;
     HingeJoint joint;
@@ -89,7 +93,8 @@ public class PaperPlaneControl : MonoBehaviour
                 pitch = ((body.velocity.magnitude * Mathf.Clamp(FdotV, 0, 0.5f) * -0.1f) - (DdotV * UdotD * 0.1f) + UdotF) * Time.deltaTime;
             }
 
-            body.AddTorque(pitch,yaw,roll);
+            body.velocity = Vector3.RotateTowards(body.velocity, transform.forward * body.velocity.magnitude, 0.1f, Time.deltaTime);
+            body.transform.Rotate(pitch, yaw, roll);
             body.AddForce(lift + glide);
         }
     }
@@ -100,7 +105,7 @@ public class PaperPlaneControl : MonoBehaviour
         gameObject.GetComponent<MeshCollider>().enabled = true;
         attached = false;
         controlled = false;
-        body.velocity = body.velocity.normalized;
+        body.velocity = Vector3.zero;
     } 
 
     IEnumerator Attach()

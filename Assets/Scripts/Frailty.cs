@@ -307,6 +307,7 @@ public class Frailty : MonoBehaviour
             roll = -Input.GetAxis("Mouse X") * 100f * Time.deltaTime;
             yaw = Input.GetAxis("Mouse X") * 100f * Time.deltaTime;
 
+            body.velocity = Vector3.RotateTowards(body.velocity, transform.forward * body.velocity.magnitude, 0.1f, Time.deltaTime);
             body.transform.Rotate(pitch, yaw, roll);
             body.AddForce(lift + glide);
         }
