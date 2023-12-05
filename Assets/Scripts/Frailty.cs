@@ -245,6 +245,16 @@ public class Frailty : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.V)) 
+        {
+            gameObject.GetComponent<BasicRigidBodyPush>().canPush = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.V))
+        {
+            gameObject.GetComponent<BasicRigidBodyPush>().canPush = false;
+        }
+
         if (!paperGliding && !magpieRiding)
         {
             if (!injuriousFall)

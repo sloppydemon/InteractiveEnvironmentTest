@@ -1129,6 +1129,7 @@ GameObject:
   - component: {fileID: 426579313}
   - component: {fileID: 426579312}
   - component: {fileID: 426579314}
+  - component: {fileID: 426579315}
   m_Layer: 0
   m_Name: ClassroomFloor
   m_TagString: Floor
@@ -1273,6 +1274,25 @@ MonoBehaviour:
   killerName: linoleum floors
   idScale: {x: 0, y: 0, z: 0}
   idOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &426579315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426579307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &442731971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1762,6 +1782,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0a82748c409d5754c8fa1f1610026a59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1030762235}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0a82748c409d5754c8fa1f1610026a59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1030762238}
   m_SourcePrefab: {fileID: 100100000, guid: 0a82748c409d5754c8fa1f1610026a59, type: 3}
 --- !u!4 &676728728 stripped
 Transform:
@@ -1880,6 +1903,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1870379560499009547, guid: b861d1c7b78285a41b9348d4bbec241d, type: 3}
       propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2097362902280456117, guid: b861d1c7b78285a41b9348d4bbec241d, type: 3}
+      propertyPath: m_OverrideArea
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8615210913896077200, guid: b861d1c7b78285a41b9348d4bbec241d, type: 3}
@@ -2667,6 +2694,25 @@ MonoBehaviour:
   killerName: that wall
   idScale: {x: 0, y: 0, z: 0}
   idOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &1030762238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030762223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!4 &1066016437 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f69995aa124a7504dabd13690b39cf41, type: 3}
@@ -3192,7 +3238,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2142096927}
   m_Father: {fileID: 1785711627}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1359591466
@@ -3553,6 +3600,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b486ff4bcb5fc4197d3993b15bac86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ai: {fileID: 1537243125}
+  player: {fileID: 918156107}
+  aiAnim: {fileID: 1537243117}
 --- !u!114 &1537243123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3577,6 +3627,28 @@ MonoBehaviour:
   killerName: that magpie
   idScale: {x: 0, y: 0, z: 0}
   idOffset: {x: 0, y: 0, z: 0}
+--- !u!195 &1537243125
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537243116}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.1
+  m_Speed: 2
+  m_Acceleration: 1.5
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 1.5
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.24
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &1546386892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4484,6 +4556,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c4ef066c42cca784696c1601451ffff9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1537243123}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c4ef066c42cca784696c1601451ffff9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1537243125}
     - targetCorrespondingSourceObject: {fileID: 4328709445196096121, guid: c4ef066c42cca784696c1601451ffff9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1917553118}
@@ -5649,6 +5724,7 @@ GameObject:
   - component: {fileID: 1941512836}
   - component: {fileID: 1941512840}
   - component: {fileID: 1941512839}
+  - component: {fileID: 1941512841}
   m_Layer: 0
   m_Name: CorridorFloor
   m_TagString: Floor
@@ -5794,6 +5870,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1941512841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941512834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1943634365
 GameObject:
   m_ObjectHideFlags: 0
@@ -6474,6 +6569,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1833202459317674815, guid: 3799dc780464ada49af17815b373e7a5, type: 3}
   m_PrefabInstance: {fileID: 2133139247}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2142096926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2142096927}
+  - component: {fileID: 2142096928}
+  m_Layer: 0
+  m_Name: NavMesh Surface
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2142096927
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142096926}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1317074007}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2142096928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142096926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 3
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 1
+  m_DefaultArea: 0
+  m_GenerateLinks: 1
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.033333335
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 54ec2215ee1d04e449417109abdd4ade, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &850454752692051173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6562,6 +6720,10 @@ PrefabInstance:
     - target: {fileID: 1870379560499009547, guid: b861d1c7b78285a41b9348d4bbec241d, type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2097362902280456117, guid: b861d1c7b78285a41b9348d4bbec241d, type: 3}
+      propertyPath: m_OverrideArea
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8320682591406938084, guid: b861d1c7b78285a41b9348d4bbec241d, type: 3}
       propertyPath: killerName
@@ -8052,8 +8214,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6849027603350423986, guid: e7aba5b883e8cee48b08b92bfeb8305e, type: 3}
+      propertyPath: canPush
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6849027603350423986, guid: e7aba5b883e8cee48b08b92bfeb8305e, type: 3}
       propertyPath: strength
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7038625045229235511, guid: e7aba5b883e8cee48b08b92bfeb8305e, type: 3}
       propertyPath: m_TagString

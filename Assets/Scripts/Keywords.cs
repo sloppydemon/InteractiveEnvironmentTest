@@ -40,7 +40,7 @@ public class Keywords : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt))
+        if (Input.GetKey(KeyCode.V))
         {
             if (!id)
             {
@@ -51,7 +51,7 @@ public class Keywords : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt))
+        if (Input.GetKey(KeyCode.V))
         {
             if (id)
             {
