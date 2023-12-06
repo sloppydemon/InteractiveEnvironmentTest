@@ -2375,7 +2375,13 @@ MonoBehaviour:
   messageBox: {fileID: 1000516935}
   narrationCamera: {fileID: 72424931}
   narrationText: {fileID: 1839596021}
-  magpie: {fileID: 0}
+  magpie: {fileID: 1537243116}
+  snd: {fileID: 918156115}
+  impactSnds:
+  - {fileID: 8300000, guid: 6ea3accc0f6e32c47a50ae6edff33e47, type: 3}
+  - {fileID: 8300000, guid: 45b4cfbde6a43f14294f12c67b8ba7d8, type: 3}
+  - {fileID: 8300000, guid: 860e3bf1d5428e54db59d8135c1c02a2, type: 3}
+  - {fileID: 8300000, guid: e57499fe5884f974b9a766ad72319bf0, type: 3}
   fallHeight: 0
   fallDifference: 0
   lastHeight: 0
@@ -2391,6 +2397,102 @@ MonoBehaviour:
   paperGliding: 0
   paperPlaneGO: {fileID: 0}
   magpieRiding: 0
+--- !u!82 &918156115
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918156100}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 710a0c75b594af249b111cfbdc5ae453, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &920313297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3830,17 +3932,28 @@ MonoBehaviour:
   speechPrefab: {fileID: 927690790876891616, guid: 238e43cc6ab3e13449de3ac8f730753b, type: 3}
   audioCall:
   - {fileID: 8300000, guid: 65fae1ca9fdfb50409b2fe386966bef1, type: 3}
+  - {fileID: 8300000, guid: ab8dba8e7d357e04eb54a51fd8c9f38f, type: 3}
+  - {fileID: 8300000, guid: 15c14db26b5ab724fbdecc1104fff6b7, type: 3}
   audioComment:
   - {fileID: 8300000, guid: 88840b5b28e43ec469b5eff5b61cf88f, type: 3}
+  - {fileID: 8300000, guid: 7f12118b795e0ac4481a7353a3edd0c1, type: 3}
+  - {fileID: 8300000, guid: 52f2eaa581a6f3c41b3999e954524103, type: 3}
+  - {fileID: 8300000, guid: 72d882c396f528540a3ea9d872c498db, type: 3}
   audioAttention:
   - {fileID: 8300000, guid: 88840b5b28e43ec469b5eff5b61cf88f, type: 3}
   audioAnxious:
   - {fileID: 8300000, guid: 8a0e9376d434d0641a1db9c36c2b51b2, type: 3}
-  audioFeet: []
-  audioSource: {fileID: 1537243127}
+  audioFeet:
+  - {fileID: 8300000, guid: 211bc43aad8b40a42a562276804405c9, type: 3}
+  - {fileID: 8300000, guid: 96e98784a96a1b548bdf5f534b336bef, type: 3}
+  - {fileID: 8300000, guid: ca8076313f70a4f4e926292036fd6c3b, type: 3}
+  - {fileID: 8300000, guid: bce01c1096233c945a7ec1461311507c, type: 3}
+  - {fileID: 8300000, guid: 95ca4df7702291b418c687e90aaf286d, type: 3}
+  - {fileID: 8300000, guid: f847b7e7f5056944c886170fcf10b5e3, type: 3}
+  snd: {fileID: 0}
   speechCam: {fileID: 2036767087}
   speechText: {fileID: 581113151}
-  speechPause: 4
+  speechPause: 2.5
   speechGreet:
   - Well, hello there...
   - Do you think you might be able to get us out of here?
@@ -3971,7 +4084,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -4697,19 +4810,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4597698613084662229, guid: c4ef066c42cca784696c1601451ffff9, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.73399776
+      value: 0.9302681
       objectReference: {fileID: 0}
     - target: {fileID: 4597698613084662229, guid: c4ef066c42cca784696c1601451ffff9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.1126852
+      value: 0.0608729
       objectReference: {fileID: 0}
     - target: {fileID: 4597698613084662229, guid: c4ef066c42cca784696c1601451ffff9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.33249503
+      value: -0.17961504
       objectReference: {fileID: 0}
     - target: {fileID: 4597698613084662229, guid: c4ef066c42cca784696c1601451ffff9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.58137465
+      value: 0.3140608
       objectReference: {fileID: 0}
     - target: {fileID: 4597698613084662229, guid: c4ef066c42cca784696c1601451ffff9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6075,7 +6188,7 @@ LookAtConstraint:
   m_GameObject: {fileID: 1917553116}
   m_Enabled: 1
   serializedVersion: 2
-  m_Weight: 1
+  m_Weight: 0.503
   m_RotationAtRest: {x: 0, y: 0, z: 0}
   m_RotationOffset: {x: -125.44, y: 193.6, z: -46.8}
   m_Roll: 0
@@ -8871,6 +8984,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1359613027547409463, guid: e7aba5b883e8cee48b08b92bfeb8305e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 918156108}
+    - targetCorrespondingSourceObject: {fileID: 1359613027547409463, guid: e7aba5b883e8cee48b08b92bfeb8305e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 918156115}
     - targetCorrespondingSourceObject: {fileID: 1790815952659468105, guid: e7aba5b883e8cee48b08b92bfeb8305e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1232491706}

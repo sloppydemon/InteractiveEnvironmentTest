@@ -43,6 +43,8 @@ public class Frailty : MonoBehaviour
     public GameObject narrationCamera;
     public GameObject narrationText;
     public GameObject magpie;
+    public AudioSource snd;
+    public AudioClip[] impactSnds;
     Camera cam;
 
     [SerializeField]
@@ -121,12 +123,15 @@ public class Frailty : MonoBehaviour
         {
             if (!dead && !dying && collision.gameObject.tag != "Player" && collision.gameObject != paperPlaneGO)
             {
+                
+
                 pc.enabled = false;
                 control.enabled = false;
                 body.isKinematic = false;
                 dying = true;
                 if (paperGliding || paperPlane)
                 {
+                    snd.Stop();
                     paperGliding = false;
                     paperPlane = false;
                     paperPlaneGO.GetComponent<PaperPlaneControl>().Detach();
@@ -138,6 +143,11 @@ public class Frailty : MonoBehaviour
                 }
                 body.AddForceAtPosition(-collision.impulse * 200, collision.GetContact(0).point);
                 body.AddForce(new Vector3(0, collision.impulse.magnitude * 20f, 0));
+
+                int clipNo = Random.Range(0, impactSnds.Length - 1);
+                snd.pitch = 0.5f + Random.Range(-0.1f, 0.1f) - (collision.impulse.magnitude * 0.1f);
+                snd.PlayOneShot(impactSnds[clipNo], 0.5f + (collision.impulse.magnitude * 0.1f));
+
                 body.angularDrag = 0.5f;
                 Time.timeScale = 0.1f;
                 Time.fixedDeltaTime = 0.002f;
@@ -151,6 +161,7 @@ public class Frailty : MonoBehaviour
             {
                 if (Vector3.Dot(transform.up, Vector3.up) > 0.8f)
                 {
+                    snd.Stop();
                     lastHeight = transform.position.y;
                     paperGliding = false;
                     paperPlane = false;
@@ -162,6 +173,7 @@ public class Frailty : MonoBehaviour
                 }
                 else
                 {
+                    snd.Stop();
                     paperGliding = false;
                     paperPlane = false;
                     paperPlaneGO.GetComponent<PaperPlaneControl>().Detach();
@@ -169,6 +181,11 @@ public class Frailty : MonoBehaviour
                     deathType = "crash";
                     body.AddForceAtPosition(-collision.impulse * 200, collision.GetContact(0).point);
                     body.AddForce(new Vector3(0, collision.impulse.magnitude * 20f, 0));
+
+                    int clipNo = Random.Range(0, impactSnds.Length - 1);
+                    snd.pitch = 0.5f + Random.Range(-0.1f, 0.1f) - (collision.impulse.magnitude * 0.1f);
+                    snd.PlayOneShot(impactSnds[clipNo], 0.5f + (collision.impulse.magnitude * 0.1f));
+
                     body.angularDrag = 0.5f;
                     Time.timeScale = 0.1f;
                     Time.fixedDeltaTime = 0.002f;
@@ -179,6 +196,7 @@ public class Frailty : MonoBehaviour
             {
                 if (collision.impulse.magnitude > glideBreakingImpulse)
                 {
+                    snd.Stop();
                     paperGliding = false;
                     paperPlane = false;
                     paperPlaneGO.GetComponent<PaperPlaneControl>().Detach();
@@ -186,6 +204,11 @@ public class Frailty : MonoBehaviour
                     deathType = "glide";
                     body.AddForceAtPosition(-collision.impulse * 200, collision.GetContact(0).point);
                     body.AddForce(new Vector3(0, collision.impulse.magnitude * 20f, 0));
+
+                    int clipNo = Random.Range(0, impactSnds.Length - 1);
+                    snd.pitch = 0.5f + Random.Range(-0.1f, 0.1f) - (collision.impulse.magnitude * 0.1f);
+                    snd.PlayOneShot(impactSnds[clipNo], 0.5f + (collision.impulse.magnitude * 0.1f));
+
                     body.angularDrag = 0.5f;
                     Time.timeScale = 0.1f;
                     Time.fixedDeltaTime = 0.002f;
@@ -199,11 +222,16 @@ public class Frailty : MonoBehaviour
             body.angularDrag = 0.5f;
             if (!dead)
             {
+                snd.Stop();
                 Time.timeScale = 0.1f;
                 Time.fixedDeltaTime = 0.002f;
                 body.AddForceAtPosition(-collision.impulse * 5, collision.GetContact(0).point);
                 body.AddForce(new Vector3(0, collision.impulse.magnitude, 0));
                 body.AddTorque(new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f)));
+
+                int clipNo = Random.Range(0, impactSnds.Length - 1);
+                snd.pitch = 0.5f + Random.Range(-0.1f, 0.1f) - (collision.impulse.magnitude * 0.1f);
+                snd.PlayOneShot(impactSnds[clipNo], 0.5f + (collision.impulse.magnitude * 0.1f));
             }
         }
     }

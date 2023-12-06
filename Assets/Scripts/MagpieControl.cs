@@ -18,7 +18,7 @@ public class MagpieControl : MonoBehaviour
     public AudioClip[] audioAttention;
     public AudioClip[] audioAnxious;
     public AudioClip[] audioFeet;
-    public AudioSource audioSource;
+    public AudioSource snd;
     Vector3 destination;
     bool followingPlayer;
     Game game;
@@ -37,7 +37,7 @@ public class MagpieControl : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         followingPlayer = true;
         game = GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>();
-        audioSource = gameObject.GetComponent<AudioSource>();
+        snd = gameObject.GetComponent<AudioSource>();
 
         StartCoroutine(Greetings());
     }
@@ -50,10 +50,18 @@ public class MagpieControl : MonoBehaviour
         magrb.AddForce(50*mag.transform.up);
     }
 
-    void magpieFeet()
+    void stepL()
     {
         int clipNo = Random.Range(0, audioFeet.Length - 1);
-        audioSource.PlayOneShot(audioFeet[clipNo]);
+        snd.pitch = 1 + Random.Range(-0.1f, 0.1f);
+        snd.PlayOneShot(audioFeet[clipNo], 0.5f);
+    }
+
+    void stepR()
+    {
+        int clipNo = Random.Range(0, audioFeet.Length - 1);
+        snd.pitch = 1 + Random.Range(-0.1f, 0.1f);
+        snd.PlayOneShot(audioFeet[clipNo], 0.5f);
     }
 
     void Update()
@@ -95,22 +103,25 @@ public class MagpieControl : MonoBehaviour
             GameObject bubble = Instantiate(speechPrefab, transform);
             aiAnim.SetTrigger("Caw");
             int j = Random.Range(0, audioComment.Length-1);
-            audioSource.PlayOneShot(audioComment[j]);
+            snd.pitch = 1 + Random.Range(-0.1f, 0.1f);
+            snd.PlayOneShot(audioComment[j]);
             i++;
             yield return new WaitForSeconds(speechPause);
             Destroy(bubble);
-            aiAnim.ResetTrigger("Caw");
+            aiAnim.SetTrigger("Caw");
         }
     }
 
     IEnumerator RandomSpeech()
     {
-        int i = Random.Range(0, speechRandom.Length - 1);
-        speechText.text = speechRandom[i];
+        int k = Random.Range(0, audioComment.Length - 1);
+        int l = Random.Range(0, speechRandom.Length - 1);
+        speechText.text = speechRandom[l];
         speechCam.Render();
         GameObject bubble = Instantiate(speechPrefab, transform);
         aiAnim.SetTrigger("Caw");
-        audioSource.PlayOneShot(audioComment[0]);
+        snd.pitch = 1 + Random.Range(-0.1f, 0.1f);
+        snd.PlayOneShot(audioComment[k]);
         yield return new WaitForSeconds(speechPause);
         Destroy(bubble);
         aiAnim.ResetTrigger("Caw");
