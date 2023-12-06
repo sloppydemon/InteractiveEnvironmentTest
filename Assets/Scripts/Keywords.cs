@@ -19,6 +19,10 @@ public class Keywords : MonoBehaviour
     public string killerName;
     public Vector3 idScale;
     public Vector3 idOffset;
+    public AudioClip[] impactAudioElementA;
+    public AudioClip[] impactAudioElementB;
+    public PhysicMaterial elementA;
+    public PhysicMaterial elementB;
     
     Camera cam;
     Game game;
