@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -17,12 +18,6 @@ public class Keywords : MonoBehaviour
     public bool canCommunicate;
     public string displayName;
     public string killerName;
-    public Vector3 idScale;
-    public Vector3 idOffset;
-    public AudioClip[] impactAudioElementA;
-    public AudioClip[] impactAudioElementB;
-    public PhysicMaterial elementA;
-    public PhysicMaterial elementB;
     
     Camera cam;
     Game game;
@@ -32,6 +27,8 @@ public class Keywords : MonoBehaviour
     Ray ray;
     RaycastHit hitInfo;
     bool hit;
+    AudioSource sndSrc;
+    AudioClip[] sndArray;
 
     void Start()
     {
@@ -40,6 +37,21 @@ public class Keywords : MonoBehaviour
         idNote = null;
         id = false;
         idCursor = null;
+        sndSrc = gameObject.GetComponent<AudioSource>();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (sndSrc != null)
+        {
+            AudioClip snd;
+            int i = Array.IndexOf(game.physicMaterials, collision.GetContact(0).thisCollider.material.name);
+            sndArray = game.sndArrays[i].audioClips;
+            int clipNo = UnityEngine.Random.Range(0, sndArray.Length - 1);
+            snd = sndArray[clipNo];
+            sndSrc.pitch = 1 + UnityEngine.Random.Range(-0.1f, 0.1f) - (collision.impulse.magnitude * 0.1f);
+            sndSrc.PlayOneShot(snd, 0.5f + (collision.impulse.magnitude * 0.1f));
+        }
     }
 
     private void OnMouseEnter()

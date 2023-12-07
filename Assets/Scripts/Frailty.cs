@@ -9,6 +9,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Processors;
 using UnityEngine.InputSystem.UI;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class Frailty : MonoBehaviour
@@ -45,6 +46,10 @@ public class Frailty : MonoBehaviour
     public GameObject magpie;
     public AudioSource snd;
     public AudioClip[] impactSnds;
+    public AudioClip flyingSnd;
+    public AudioClip dyingSnd;
+    public AudioClip deathSnd;
+    public GameObject sun;
     Camera cam;
 
     [SerializeField]
@@ -74,6 +79,7 @@ public class Frailty : MonoBehaviour
     public GameObject paperPlaneGO;
     [SerializeField]
     bool magpieRiding;
+    bool deathDone;
 
     float UdotD;
     float UdotF;
@@ -106,6 +112,7 @@ public class Frailty : MonoBehaviour
         paperPlane = false;
         paperPlaneGO = null;
         magpieRiding = false;
+        deathDone = false;
         UdotD = 0f;
         UdotF = 0f;
         FdotV = 0f;
@@ -123,7 +130,10 @@ public class Frailty : MonoBehaviour
         {
             if (!dead && !dying && collision.gameObject.tag != "Player" && collision.gameObject != paperPlaneGO)
             {
-                
+                snd.clip = dyingSnd;
+                snd.Play();
+                snd.pitch = 1;
+                snd.volume = 0.75f;
 
                 pc.enabled = false;
                 control.enabled = false;
@@ -131,7 +141,6 @@ public class Frailty : MonoBehaviour
                 dying = true;
                 if (paperGliding || paperPlane)
                 {
-                    snd.Stop();
                     paperGliding = false;
                     paperPlane = false;
                     paperPlaneGO.GetComponent<PaperPlaneControl>().Detach();
@@ -152,6 +161,7 @@ public class Frailty : MonoBehaviour
                 Time.timeScale = 0.1f;
                 Time.fixedDeltaTime = 0.002f;
                 killingObject = collision.gameObject;
+                sun.GetComponent<SunControl>().DyingStart();
             }
         }
 
@@ -161,7 +171,10 @@ public class Frailty : MonoBehaviour
             {
                 if (Vector3.Dot(transform.up, Vector3.up) > 0.8f)
                 {
-                    snd.Stop();
+                    snd.clip = null;
+                    snd.pitch = 1;
+                    snd.volume = 1;
+
                     lastHeight = transform.position.y;
                     paperGliding = false;
                     paperPlane = false;
@@ -173,7 +186,11 @@ public class Frailty : MonoBehaviour
                 }
                 else
                 {
-                    snd.Stop();
+                    snd.clip = dyingSnd;
+                    snd.Play();
+                    snd.pitch = 1;
+                    snd.volume = 0.75f;
+
                     paperGliding = false;
                     paperPlane = false;
                     paperPlaneGO.GetComponent<PaperPlaneControl>().Detach();
@@ -189,14 +206,18 @@ public class Frailty : MonoBehaviour
                     body.angularDrag = 0.5f;
                     Time.timeScale = 0.1f;
                     Time.fixedDeltaTime = 0.002f;
-                    //killingObject = collision.gameObject;
+                    sun.GetComponent<SunControl>().DyingStart();
                 }
             }
             else
             {
                 if (collision.impulse.magnitude > glideBreakingImpulse)
                 {
-                    snd.Stop();
+                    snd.clip = dyingSnd;
+                    snd.Play();
+                    snd.pitch = 1;
+                    snd.volume = 0.75f;
+
                     paperGliding = false;
                     paperPlane = false;
                     paperPlaneGO.GetComponent<PaperPlaneControl>().Detach();
@@ -213,6 +234,7 @@ public class Frailty : MonoBehaviour
                     Time.timeScale = 0.1f;
                     Time.fixedDeltaTime = 0.002f;
                     killingObject = collision.gameObject;
+                    sun.GetComponent<SunControl>().DyingStart();
                 }
             }
         }
@@ -222,7 +244,11 @@ public class Frailty : MonoBehaviour
             body.angularDrag = 0.5f;
             if (!dead)
             {
-                snd.Stop();
+                snd.clip = dyingSnd;
+                snd.Play();
+                snd.pitch = 1;
+                snd.volume = 0.75f;
+
                 Time.timeScale = 0.1f;
                 Time.fixedDeltaTime = 0.002f;
                 body.AddForceAtPosition(-collision.impulse * 5, collision.GetContact(0).point);
@@ -232,6 +258,8 @@ public class Frailty : MonoBehaviour
                 int clipNo = Random.Range(0, impactSnds.Length - 1);
                 snd.pitch = 0.5f + Random.Range(-0.1f, 0.1f) - (collision.impulse.magnitude * 0.1f);
                 snd.PlayOneShot(impactSnds[clipNo], 0.5f + (collision.impulse.magnitude * 0.1f));
+
+                sun.GetComponent<SunControl>().DyingStart();
             }
         }
     }
@@ -244,6 +272,7 @@ public class Frailty : MonoBehaviour
             {
                 if (other.gameObject.tag != "Player" && other.gameObject != killingObject && other.gameObject != paperPlaneGO)
                 {
+                    snd.clip = null;
                     GameObject[] destroyList = GameObject.FindGameObjectsWithTag("Floor");
                     for (int i = 0; i < destroyList.Length; i++)
                     {
@@ -263,6 +292,10 @@ public class Frailty : MonoBehaviour
                     Time.timeScale = 1f;
                     Time.fixedDeltaTime = 0.02f;
                     dead = true;
+                    
+                    snd.clip = flyingSnd;
+                    snd.Play();
+                    sun.GetComponent<SunControl>().DeadStart();
                     StartCoroutine(Death(deathType));
 
 
@@ -308,6 +341,8 @@ public class Frailty : MonoBehaviour
                         body.isKinematic = false;
                         body.velocity = lastVelocity;
                         dying = true;
+                        snd.clip = flyingSnd;
+                        snd.Play();
                     }
                     lastHeight = transform.position.y;
                 }
@@ -319,6 +354,8 @@ public class Frailty : MonoBehaviour
                     control.enabled = false;
                     body.isKinematic = false;
                     body.velocity = lastVelocity;
+                    snd.clip = flyingSnd;
+                    snd.Play();
                 }
                 else
                 {
@@ -348,12 +385,24 @@ public class Frailty : MonoBehaviour
             body.velocity = Vector3.RotateTowards(body.velocity, transform.forward * body.velocity.magnitude, 0.1f, Time.deltaTime);
             body.transform.Rotate(pitch, yaw, roll);
             body.AddForce(lift + glide);
+            snd.pitch = 1f * (body.velocity.magnitude * 0.5f);
+            snd.volume = 1f * (body.velocity.magnitude * 0.2f);
         }
-    }
 
-    private void FixedUpdate()
-    {
-        
+        if (dead)
+        {
+            if (deathDone)
+            {
+                if (Input.anyKeyDown)
+                {
+
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+                }
+            }
+
+            snd.pitch = 0.2f + (body.velocity.magnitude * 0.001f);
+            snd.volume = 0.01f + (body.velocity.magnitude * 0.005f);
+        }
     }
 
     IEnumerator Death(string type)
@@ -392,6 +441,8 @@ public class Frailty : MonoBehaviour
         messageGO.transform.position = cam.transform.position + messagePositionFar;
         messageBox.transform.localScale = firstScale;
         messageGO.SetActive(true);
+        AudioSource AudioB = gameObject.AddComponent<AudioSource>();
+        AudioB.PlayOneShot(deathSnd, 0.75f);
         yield return null;
 
         float lerp = 0f;
@@ -406,6 +457,8 @@ public class Frailty : MonoBehaviour
             messageGO.transform.position = Vector3.Lerp(cam.transform.position + (cam.transform.forward * messagePositionFar.z), cam.transform.position + (cam.transform.forward * messagePositionClose.z), lerp);
             yield return null;
         }
+
+        deathDone = true;
 
         yield return new WaitForSeconds(5);
 

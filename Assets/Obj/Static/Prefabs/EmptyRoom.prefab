@@ -342,7 +342,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5201594601070111174}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2482c2a6c10d8ec419c6dcefe9032dc7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -363,7 +363,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5201594601070111174}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2482c2a6c10d8ec419c6dcefe9032dc7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -384,7 +384,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5201594601070111174}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2482c2a6c10d8ec419c6dcefe9032dc7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -405,7 +405,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5201594601070111174}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2482c2a6c10d8ec419c6dcefe9032dc7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -426,7 +426,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5201594601070111174}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2482c2a6c10d8ec419c6dcefe9032dc7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -447,7 +447,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5201594601070111174}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2482c2a6c10d8ec419c6dcefe9032dc7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -510,8 +510,6 @@ MonoBehaviour:
   canCommunicate: 0
   displayName: wall
   killerName: walls
-  idScale: {x: 0, y: 0, z: 0}
-  idOffset: {x: 0, y: 0, z: 0}
 --- !u!1001 &6134851368535166671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -658,5 +656,3 @@ MonoBehaviour:
   canCommunicate: 0
   displayName: door
   killerName: doors
-  idScale: {x: 0, y: 0, z: 0}
-  idOffset: {x: 0, y: 0, z: 0}
