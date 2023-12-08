@@ -1124,6 +1124,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1030052803}
     m_Modifications:
+    - target: {fileID: 745523744782337711, guid: 7b1e3a5251a274e4290ae8a52f9aa203, type: 3}
+      propertyPath: perchableAtTheMoment
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6268948518004444446, guid: 7b1e3a5251a274e4290ae8a52f9aa203, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.9612765
@@ -1134,7 +1138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6268948518004444446, guid: 7b1e3a5251a274e4290ae8a52f9aa203, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.466
+      value: -0.493
       objectReference: {fileID: 0}
     - target: {fileID: 6268948518004444446, guid: 7b1e3a5251a274e4290ae8a52f9aa203, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1329,7 +1333,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   perchable: 0
-  perchType: {fileID: 0}
+  perchTypeCylinder: 0
+  perchTransform: {fileID: 0}
+  perchableAtTheMoment: 0
   floor: 1
   canTake: 0
   canGrab: 0
@@ -1338,6 +1344,7 @@ MonoBehaviour:
   canCommunicate: 0
   displayName: linoleum floor
   killerName: linoleum floors
+  fallbackSnd: {fileID: 8300000, guid: 12b8f492abd6bcc40b9ae1ff2e394870, type: 3}
 --- !u!114 &426579315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1365,6 +1372,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1030052803}
     m_Modifications:
+    - target: {fileID: 745523744782337711, guid: 7b1e3a5251a274e4290ae8a52f9aa203, type: 3}
+      propertyPath: perchableAtTheMoment
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6268948518004444446, guid: 7b1e3a5251a274e4290ae8a52f9aa203, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.661
@@ -1375,7 +1386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6268948518004444446, guid: 7b1e3a5251a274e4290ae8a52f9aa203, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.813
+      value: 6.836
       objectReference: {fileID: 0}
     - target: {fileID: 6268948518004444446, guid: 7b1e3a5251a274e4290ae8a52f9aa203, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1714,6 +1725,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1030052803}
     m_Modifications:
+    - target: {fileID: 745523744782337711, guid: 7b1e3a5251a274e4290ae8a52f9aa203, type: 3}
+      propertyPath: perchableAtTheMoment
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6268948518004444446, guid: 7b1e3a5251a274e4290ae8a52f9aa203, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.8497336
@@ -3220,7 +3235,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   perchable: 0
-  perchType: {fileID: 0}
+  perchTypeCylinder: 0
+  perchTransform: {fileID: 0}
+  perchableAtTheMoment: 0
   floor: 0
   canTake: 0
   canGrab: 0
@@ -3229,6 +3246,7 @@ MonoBehaviour:
   canCommunicate: 0
   displayName: wall
   killerName: that wall
+  fallbackSnd: {fileID: 8300000, guid: 12b8f492abd6bcc40b9ae1ff2e394870, type: 3}
 --- !u!114 &1030762238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3530,7 +3548,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   perchable: 0
-  perchType: {fileID: 0}
+  perchTypeCylinder: 0
+  perchTransform: {fileID: 0}
+  perchableAtTheMoment: 0
   floor: 0
   canTake: 0
   canGrab: 1
@@ -3539,6 +3559,7 @@ MonoBehaviour:
   canCommunicate: 0
   displayName: white pawn
   killerName: that white pawn
+  fallbackSnd: {fileID: 0}
 --- !u!1 &1181734755
 GameObject:
   m_ObjectHideFlags: 0
@@ -3704,7 +3725,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   perchable: 0
-  perchType: {fileID: 0}
+  perchTypeCylinder: 0
+  perchTransform: {fileID: 0}
+  perchableAtTheMoment: 0
   floor: 0
   canTake: 0
   canGrab: 1
@@ -3713,6 +3736,7 @@ MonoBehaviour:
   canCommunicate: 0
   displayName: black pawn
   killerName: that black pawn
+  fallbackSnd: {fileID: 0}
 --- !u!4 &1267484878 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7481235296662637774, guid: e7aba5b883e8cee48b08b92bfeb8305e, type: 3}
@@ -3843,7 +3867,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   perchable: 0
-  perchType: {fileID: 0}
+  perchTypeCylinder: 0
+  perchTransform: {fileID: 0}
+  perchableAtTheMoment: 0
   floor: 0
   canTake: 0
   canGrab: 0
@@ -3852,6 +3878,7 @@ MonoBehaviour:
   canCommunicate: 0
   displayName: ceiling
   killerName: that ceiling
+  fallbackSnd: {fileID: 0}
 --- !u!4 &1300132231 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8615210913896077200, guid: b861d1c7b78285a41b9348d4bbec241d, type: 3}
@@ -4343,10 +4370,22 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7f12118b795e0ac4481a7353a3edd0c1, type: 3}
   - {fileID: 8300000, guid: 52f2eaa581a6f3c41b3999e954524103, type: 3}
   - {fileID: 8300000, guid: 72d882c396f528540a3ea9d872c498db, type: 3}
+  - {fileID: 8300000, guid: d6a04799fd35e0e40a90428dfcf0de3d, type: 3}
+  - {fileID: 8300000, guid: 453f0d6d555e3464690b9c67aeae626d, type: 3}
+  - {fileID: 8300000, guid: 8714ab37a13d39e4eb80ee20a8449931, type: 3}
+  - {fileID: 8300000, guid: 60d35e6e85eaae24d98ced11f9227cb0, type: 3}
   audioAttention:
-  - {fileID: 8300000, guid: 88840b5b28e43ec469b5eff5b61cf88f, type: 3}
-  audioAnxious:
   - {fileID: 8300000, guid: 8a0e9376d434d0641a1db9c36c2b51b2, type: 3}
+  - {fileID: 8300000, guid: 9e9accde2f99bb142821d1dc59777b9d, type: 3}
+  - {fileID: 8300000, guid: a98f49c9f9862074ea85726063145267, type: 3}
+  - {fileID: 8300000, guid: 88a36e0ecbc8f9a47adf714f30914f0e, type: 3}
+  - {fileID: 8300000, guid: 012e8373c343b9c40afd000b2666a2c7, type: 3}
+  audioAnxious:
+  - {fileID: 8300000, guid: c054c95377f6b584fb27bdb014f93d79, type: 3}
+  - {fileID: 8300000, guid: 41b26f07e03bc9645bc08624fe440b49, type: 3}
+  - {fileID: 8300000, guid: 65fae1ca9fdfb50409b2fe386966bef1, type: 3}
+  - {fileID: 8300000, guid: ab8dba8e7d357e04eb54a51fd8c9f38f, type: 3}
+  - {fileID: 8300000, guid: 15c14db26b5ab724fbdecc1104fff6b7, type: 3}
   audioFeet:
   - {fileID: 8300000, guid: 211bc43aad8b40a42a562276804405c9, type: 3}
   - {fileID: 8300000, guid: 96e98784a96a1b548bdf5f534b336bef, type: 3}
@@ -4354,7 +4393,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bce01c1096233c945a7ec1461311507c, type: 3}
   - {fileID: 8300000, guid: 95ca4df7702291b418c687e90aaf286d, type: 3}
   - {fileID: 8300000, guid: f847b7e7f5056944c886170fcf10b5e3, type: 3}
+  audioFlap:
+  - {fileID: 8300000, guid: 5698caef480cfab43a68c65555c14c34, type: 3}
+  - {fileID: 8300000, guid: b92370cb6bb146e47afdbac7d947dc67, type: 3}
+  - {fileID: 8300000, guid: bbc03e4ff409ec842b9bd04d1552dfbb, type: 3}
   snd: {fileID: 0}
+  perchWaitTimeMinMax: {x: 0, y: 2}
+  useLateralSpeedSolver: 1
+  flightSpeed: 1
+  flightHeightAddend: 0.1
+  reqGravity: 0
+  initialPerchSearchDistance: 1
+  perchSearchDistanceIncrement: 0.1
+  perchChancePer: 12
   speechCam: {fileID: 2036767087}
   speechText: {fileID: 581113151}
   speechPause: 2.5
@@ -4378,6 +4429,13 @@ MonoBehaviour:
   - You should err ... try that? Whatever it is.
   speechRandom:
   - If this is you using the "vee key", I'm not sure I approve...
+  speechPerch:
+  - I need to perch!
+  - I just need to GRAB something!
+  - Excuse me! Just needed to perch so bad...
+  speechWait:
+  - Wait for me!
+  - Where are you going?
   commentsFall: []
   commentsGlide: []
   commentsKill: []
@@ -4395,7 +4453,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   perchable: 0
-  perchType: {fileID: 0}
+  perchTypeCylinder: 0
+  perchTransform: {fileID: 0}
+  perchableAtTheMoment: 0
   floor: 0
   canTake: 0
   canGrab: 0
@@ -4404,6 +4464,7 @@ MonoBehaviour:
   canCommunicate: 1
   displayName: magpie
   killerName: that magpie
+  fallbackSnd: {fileID: 8300000, guid: 12b8f492abd6bcc40b9ae1ff2e394870, type: 3}
 --- !u!195 &1537243125
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5447,6 +5508,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1030052803}
     m_Modifications:
+    - target: {fileID: 745523744782337711, guid: 7b1e3a5251a274e4290ae8a52f9aa203, type: 3}
+      propertyPath: perchableAtTheMoment
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6268948518004444446, guid: 7b1e3a5251a274e4290ae8a52f9aa203, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.7313591
@@ -5527,7 +5592,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   perchable: 0
-  perchType: {fileID: 0}
+  perchTypeCylinder: 0
+  perchTransform: {fileID: 0}
+  perchableAtTheMoment: 0
   floor: 0
   canTake: 0
   canGrab: 0
@@ -5536,6 +5603,7 @@ MonoBehaviour:
   canCommunicate: 0
   displayName: ceiling
   killerName: that ceiling
+  fallbackSnd: {fileID: 0}
 --- !u!65 &1562177022
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5570,6 +5638,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1030052803}
     m_Modifications:
+    - target: {fileID: 745523744782337711, guid: 7b1e3a5251a274e4290ae8a52f9aa203, type: 3}
+      propertyPath: perchableAtTheMoment
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6268948518004444446, guid: 7b1e3a5251a274e4290ae8a52f9aa203, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.29089332
@@ -5991,7 +6063,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   perchable: 0
-  perchType: {fileID: 0}
+  perchTypeCylinder: 0
+  perchTransform: {fileID: 0}
+  perchableAtTheMoment: 0
   floor: 0
   canTake: 0
   canGrab: 0
@@ -6000,6 +6074,7 @@ MonoBehaviour:
   canCommunicate: 0
   displayName: ceiling
   killerName: that ceiling
+  fallbackSnd: {fileID: 8300000, guid: 12b8f492abd6bcc40b9ae1ff2e394870, type: 3}
 --- !u!1001 &1761885771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6713,7 +6788,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   perchable: 0
-  perchType: {fileID: 0}
+  perchTypeCylinder: 0
+  perchTransform: {fileID: 0}
+  perchableAtTheMoment: 0
   floor: 1
   canTake: 0
   canGrab: 0
@@ -6722,6 +6799,7 @@ MonoBehaviour:
   canCommunicate: 0
   displayName: linoleum floor
   killerName: linoleum floors
+  fallbackSnd: {fileID: 0}
 --- !u!54 &1941512840
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7647,6 +7725,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1030052803}
     m_Modifications:
+    - target: {fileID: 745523744782337711, guid: 7b1e3a5251a274e4290ae8a52f9aa203, type: 3}
+      propertyPath: perchableAtTheMoment
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6268948518004444446, guid: 7b1e3a5251a274e4290ae8a52f9aa203, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.666
@@ -7657,7 +7739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6268948518004444446, guid: 7b1e3a5251a274e4290ae8a52f9aa203, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.443
+      value: -0.471
       objectReference: {fileID: 0}
     - target: {fileID: 6268948518004444446, guid: 7b1e3a5251a274e4290ae8a52f9aa203, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8023,63 +8105,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1774507334}
   m_SourcePrefab: {fileID: 100100000, guid: 4e622ed41d985fb41b67923b0a8c3188, type: 3}
---- !u!1001 &8381184482007222056
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 927690790876891616, guid: 238e43cc6ab3e13449de3ac8f730753b, type: 3}
-      propertyPath: m_Name
-      value: PF_MagpieSpeech
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668714084927642222, guid: 238e43cc6ab3e13449de3ac8f730753b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668714084927642222, guid: 238e43cc6ab3e13449de3ac8f730753b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668714084927642222, guid: 238e43cc6ab3e13449de3ac8f730753b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668714084927642222, guid: 238e43cc6ab3e13449de3ac8f730753b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668714084927642222, guid: 238e43cc6ab3e13449de3ac8f730753b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668714084927642222, guid: 238e43cc6ab3e13449de3ac8f730753b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668714084927642222, guid: 238e43cc6ab3e13449de3ac8f730753b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668714084927642222, guid: 238e43cc6ab3e13449de3ac8f730753b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668714084927642222, guid: 238e43cc6ab3e13449de3ac8f730753b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668714084927642222, guid: 238e43cc6ab3e13449de3ac8f730753b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 238e43cc6ab3e13449de3ac8f730753b, type: 3}
 --- !u!1001 &9202809210035363963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9406,4 +9431,3 @@ SceneRoots:
   - {fileID: 2113920299}
   - {fileID: 74429047}
   - {fileID: 1785711627}
-  - {fileID: 8381184482007222056}

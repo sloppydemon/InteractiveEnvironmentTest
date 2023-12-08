@@ -9,7 +9,9 @@ using UnityEngine.UI;
 public class Keywords : MonoBehaviour
 {
     public bool perchable;
-    public Dropdown perchType;
+    public bool perchTypeCylinder;
+    public Transform perchTransform;
+    public bool perchableAtTheMoment;
     public bool floor;
     public bool canTake;
     public bool canGrab;
@@ -18,6 +20,9 @@ public class Keywords : MonoBehaviour
     public bool canCommunicate;
     public string displayName;
     public string killerName;
+    public AudioClip fallbackSnd;
+
+
     
     Camera cam;
     Game game;
@@ -46,11 +51,31 @@ public class Keywords : MonoBehaviour
         {
             AudioClip snd;
             int i = Array.IndexOf(game.physicMaterials, collision.GetContact(0).thisCollider.material.name);
-            sndArray = game.sndArrays[i].audioClips;
-            int clipNo = UnityEngine.Random.Range(0, sndArray.Length - 1);
-            snd = sndArray[clipNo];
+            if (i == -1)
+            {
+                snd = fallbackSnd;
+            }
+            else
+            {
+                sndArray = game.sndArrays[i].audioClips;
+                int clipNo = UnityEngine.Random.Range(0, sndArray.Length - 1);
+                snd = sndArray[clipNo];
+            }
             sndSrc.pitch = 1 + UnityEngine.Random.Range(-0.1f, 0.1f) - (collision.impulse.magnitude * 0.1f);
             sndSrc.PlayOneShot(snd, 0.5f + (collision.impulse.magnitude * 0.1f));
+        }
+
+        if (perchable)
+        {
+            float TdotU = (1 + Vector3.Dot(gameObject.transform.up, Vector3.up)) / 2;
+            if (TdotU > 0.75f)
+            {
+                perchableAtTheMoment = true;
+            }
+            else
+            {
+                perchableAtTheMoment = false;
+            }
         }
     }
 

@@ -144,6 +144,7 @@ MonoBehaviour:
   canCommunicate: 0
   displayName: chessboard
   killerName: that chessboard
+  fallbackSnd: {fileID: 8300000, guid: 12b8f492abd6bcc40b9ae1ff2e394870, type: 3}
 --- !u!82 &-1678242410119736627
 AudioSource:
   m_ObjectHideFlags: 0

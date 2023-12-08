@@ -1,0 +1,220 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8563547343966109161
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ClassroomSkybox_BackUp
+  m_Shader: {fileID: -6465566751694194690, guid: daf46c12ec0519d4399a044a0b755694, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _CLOUDGRADIENTBLENDMETHOD_MULTIPLY
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_518b5164f1d5498583fcdd005cbd8200_Texture_1_Texture2D:
+        m_Texture: {fileID: 8400000, guid: 0280b37c95637ea49bfd59c67a7440a9, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaClip: 0
+    - _AlphaToMask: 0
+    - _Blend: 0
+    - _BlendModePreserveSpecular: 1
+    - _BumpScale: 1
+    - _CLOUDGRADIENTBLENDMETHOD: 0
+    - _ClearCoatMask: 0
+    - _ClearCoatSmoothness: 0
+    - _CloudCutoff: 3.9
+    - _CloudCutoffEnabled: 1
+    - _CloudCutoffFalloff: 0.005
+    - _CloudDistance: 0.291
+    - _CloudFarTiling: 0.01
+    - _CloudLayerSeparation: 1.000171
+    - _CloudMovement: 0.01
+    - _CloudMovementDirection: 0.275
+    - _CloudNormalStrength: 150
+    - _CloudScale: 6.6
+    - _CloudSmoothness: 0.1
+    - _CloudThicknessFactor: 0.161
+    - _CloudThreshold: 0.391
+    - _CloudUnderlineSmoothness: 0.006
+    - _CloudUnderlineThickness: 0.054
+    - _CloudUnderllineStart: 0
+    - _CloudsBrightness: 0.825
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _DetailAlbedoMapScale: 1
+    - _DetailNormalMapScale: 1
+    - _DivideTimeByDeltaTime: 0.101
+    - _DstBlend: 0
+    - _DstBlendAlpha: 0
+    - _ENUM: 0
+    - _EnvironmentReflections: 1
+    - _FieryUnderCloud: 0
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _GradientErosionDirection: 0.358
+    - _GradientErosionMovement: 0.03
+    - _GradientScaleFactor: 0.1
+    - _HardLightSmoothness: 0.02
+    - _HardLightSpread: 0.696
+    - _HighlightSmoothness: 0.02
+    - _HighlightSpread: 0.746
+    - _HorizonColorStart: -0.89
+    - _HorizonColorStart_1: -0.89
+    - _JitterAmount: 0.117
+    - _JitterPerFrame: 0.126
+    - _JitterScale: 20
+    - _JitterTimeOffset: 15.7
+    - _JitterVectorSeparation: 0.515
+    - _Layer0CloudThreshold: 0.5
+    - _Layer1CloudThreshold: 0.5
+    - _Layer1Separation: 1.00015
+    - _Layer1ThresholdFactor: 0.978
+    - _Layer2Height: 1.01
+    - _Layer2HeightAddend: 0.0001
+    - _Layer2NormalRotation: 0.139
+    - _Layer2Separation: 1.0001
+    - _Layer2ThresholdFactor: 0.908
+    - _Layer3Height: 1.0664
+    - _Layer3HeightAddend: 0.0095
+    - _Layer3NormalRotation: 1
+    - _Layer3ThresholdFactor: 0.954
+    - _Metallic: 0
+    - _NoiseToGradientLerp: 0.703
+    - _OcclusionStrength: 1
+    - _OutlineThickness: 0.005
+    - _Parallax: 0.005
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
+    - _ShadowSmoothness: 0.025
+    - _ShadowSpread: 0.061
+    - _SkyColorStart: 0.74
+    - _Smoothness: 0.5
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _SrcBlendAlpha: 1
+    - _SunBackscatterDistance: 0.526
+    - _SunSize: 0.185
+    - _SunSoftness: 0.167
+    - _SunToCloudColorInfluence: 0.405
+    - _Surface: 0
+    - _Toon: 1
+    - _ToonJitter: 1
+    - _ToonOutline: 1
+    - _ToonSmoothness: 0.005
+    - _WorkflowMode: 1
+    - _ZWrite: 1
+    m_Colors:
+    - _BaseColor: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _HardLightColor: {r: 1.986, g: 1.986, b: 1.986, a: 1}
+    - _HighlightColor: {r: 0.759, g: 0.759, b: 0.759, a: 1}
+    - _HorizonColor: {r: 0, g: 0.6269166, b: 0.8018868, a: 1}
+    - _HorizonColorDauwnsk: {r: 0.44065464, g: 0.2705882, b: 0.98039216, a: 1}
+    - _HorizonColorDauwskn: {r: 0.8301887, g: 0, b: 0.5743167, a: 0}
+    - _HorizonColorNearSunDauwnsk: {r: 0.98039216, g: 0.637588, b: 0.27058816, a: 1}
+    - _HorizonColorNearSunZenith: {r: 0.6096476, g: 0.9433962, b: 0.8014379, a: 1}
+    - _HorizonColorZenith: {r: 0, g: 0.6269166, b: 0.8018868, a: 1}
+    - _ShadowColor: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}
+    - _SkyColor: {r: 0.0006157947, g: 0, b: 0.6132076, a: 1}
+    - _SkyColorDauwnsk: {r: 0.06207859, g: 0, b: 0.3137255, a: 1}
+    - _SkyColorDauwskn: {r: 0.15406537, g: 0, b: 0.31199998, a: 0}
+    - _SkyColorNearSunDauwnsk: {r: 0.5461171, g: 0, b: 0.681, a: 1}
+    - _SkyColorNearSunZenith: {r: 0.33041117, g: 0.5008304, b: 0.7075471, a: 1}
+    - _SkyColorZenith: {r: 0.0006157947, g: 0, b: 0.6132076, a: 1}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _SunColor: {r: 0.93759847, g: 0.8331752, b: 0.5616746, a: 1}
+    - _SunColorTint: {r: 0.98039216, g: 0.9729278, b: 0.9245098, a: 1}
+    - _SunColorTintDauwnsk: {r: 25.474522, g: 8.349293, b: 2.4007404, a: 1}
+    - _SunColorTintDauwskn: {r: 0.9433962, g: 0.5244909, b: 0.022249907, a: 1}
+    - _SunColorTintZenith: {r: 1.6858639, g: 2, b: 1.9109948, a: 1}
+    - _UnderlineColor: {r: 0.066037714, g: 0.066037714, b: 0.066037714, a: 1}
+  m_BuildTextureStacks: []

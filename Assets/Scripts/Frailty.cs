@@ -125,10 +125,9 @@ public class Frailty : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.impulse.magnitude);
         if (collision.impulse.magnitude > killingImpulse)
         {
-            if (!dead && !dying && collision.gameObject.tag != "Player" && collision.gameObject != paperPlaneGO)
+            if (!dead && !dying && collision.gameObject.tag != "Player" && collision.gameObject != paperPlaneGO && collision.gameObject != magpie)
             {
                 snd.clip = dyingSnd;
                 snd.Play();
@@ -213,28 +212,31 @@ public class Frailty : MonoBehaviour
             {
                 if (collision.impulse.magnitude > glideBreakingImpulse)
                 {
-                    snd.clip = dyingSnd;
-                    snd.Play();
-                    snd.pitch = 1;
-                    snd.volume = 0.75f;
+                    if (collision.gameObject != magpie)
+                    {
+                        snd.clip = dyingSnd;
+                        snd.Play();
+                        snd.pitch = 1;
+                        snd.volume = 0.75f;
 
-                    paperGliding = false;
-                    paperPlane = false;
-                    paperPlaneGO.GetComponent<PaperPlaneControl>().Detach();
-                    dying = true;
-                    deathType = "glide";
-                    body.AddForceAtPosition(-collision.impulse * 200, collision.GetContact(0).point);
-                    body.AddForce(new Vector3(0, collision.impulse.magnitude * 20f, 0));
+                        paperGliding = false;
+                        paperPlane = false;
+                        paperPlaneGO.GetComponent<PaperPlaneControl>().Detach();
+                        dying = true;
+                        deathType = "glide";
+                        body.AddForceAtPosition(-collision.impulse * 200, collision.GetContact(0).point);
+                        body.AddForce(new Vector3(0, collision.impulse.magnitude * 20f, 0));
 
-                    int clipNo = Random.Range(0, impactSnds.Length - 1);
-                    snd.pitch = 0.5f + Random.Range(-0.1f, 0.1f) - (collision.impulse.magnitude * 0.1f);
-                    snd.PlayOneShot(impactSnds[clipNo], 0.5f + (collision.impulse.magnitude * 0.1f));
+                        int clipNo = Random.Range(0, impactSnds.Length - 1);
+                        snd.pitch = 0.5f + Random.Range(-0.1f, 0.1f) - (collision.impulse.magnitude * 0.1f);
+                        snd.PlayOneShot(impactSnds[clipNo], 0.5f + (collision.impulse.magnitude * 0.1f));
 
-                    body.angularDrag = 0.5f;
-                    Time.timeScale = 0.1f;
-                    Time.fixedDeltaTime = 0.002f;
-                    killingObject = collision.gameObject;
-                    sun.GetComponent<SunControl>().DyingStart();
+                        body.angularDrag = 0.5f;
+                        Time.timeScale = 0.1f;
+                        Time.fixedDeltaTime = 0.002f;
+                        killingObject = collision.gameObject;
+                        sun.GetComponent<SunControl>().DyingStart();
+                    }
                 }
             }
         }
@@ -270,7 +272,7 @@ public class Frailty : MonoBehaviour
         {
             if(!dead)
             {
-                if (other.gameObject.tag != "Player" && other.gameObject != killingObject && other.gameObject != paperPlaneGO)
+                if (other.gameObject.tag != "Player" && other.gameObject != killingObject && other.gameObject != paperPlaneGO && other.gameObject != magpie)
                 {
                     snd.clip = null;
                     GameObject[] destroyList = GameObject.FindGameObjectsWithTag("Floor");
