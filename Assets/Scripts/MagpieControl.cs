@@ -1,12 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.Entities.UniversalDelegates;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Splines.Interpolators;
-using UnityEngine.UI;
 
 public class MagpieControl : MonoBehaviour
 {

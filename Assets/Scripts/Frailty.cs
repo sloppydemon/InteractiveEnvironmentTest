@@ -1,16 +1,8 @@
 using StarterAssets;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using UnityEditor;
-using UnityEditor.Rendering.Fullscreen.ShaderGraph;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Processors;
-using UnityEngine.InputSystem.UI;
-using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
 
 public class Frailty : MonoBehaviour
 {

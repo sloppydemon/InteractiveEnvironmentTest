@@ -1327,7 +1327,17 @@
             "m_Id": "d1a816089e1642ccacf5ee60e9a90f55"
         }
     ],
-    "m_StickyNoteDatas": [],
+    "m_StickyNoteDatas": [
+        {
+            "m_Id": "c1be349d14ab42d4aa33fdc1ca41d680"
+        },
+        {
+            "m_Id": "2e70f71839ed42549b80882c390da087"
+        },
+        {
+            "m_Id": "cf8543df646d4c8ab4e548fb7a7d7528"
+        }
+    ],
     "m_Edges": [
         {
             "m_OutputSlot": {
@@ -13646,6 +13656,26 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "2e70f71839ed42549b80882c390da087",
+    "m_Title": "",
+    "m_Content": "the cloud got a bit too much very near the horizon so this cuts them off at an optional distance\n",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -3252.0,
+        "y": -106.0,
+        "width": 165.217529296875,
+        "height": 128.69564819335938
+    },
+    "m_Group": {
+        "m_Id": "ebd95840455049119cb4ff42d7f437a6"
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
     "m_ObjectId": "2ef9be90cd284b44ab0e12cdccace3ca",
     "m_Id": 0,
@@ -16572,10 +16602,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -3237.000244140625,
-            "y": -88.99999237060547,
+            "x": -3038.0,
+            "y": -95.0,
             "width": 171.0,
-            "height": 34.0000114440918
+            "height": 34.000003814697269
         }
     },
     "m_Slots": [
@@ -34622,6 +34652,26 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "c1be349d14ab42d4aa33fdc1ca41d680",
+    "m_Title": "",
+    "m_Content": "UVs make two 'infinite' planes, one above and one below the horizon",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -4199.0,
+        "y": -415.0,
+        "width": 200.0,
+        "height": 160.0
+    },
+    "m_Group": {
+        "m_Id": "98daad79b78647d8885e9f3bfb09a347"
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "c1d575242cca486fb36601658abf3e1b",
     "m_Id": 1,
@@ -36568,6 +36618,26 @@
         "y": 0.0,
         "z": 0.0,
         "w": 0.0
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "cf8543df646d4c8ab4e548fb7a7d7528",
+    "m_Title": "",
+    "m_Content": "creates wobble that is similar to the one in the outline outline shader, to ",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -2883.0,
+        "y": 727.0,
+        "width": 200.0,
+        "height": 160.0
+    },
+    "m_Group": {
+        "m_Id": "64e5e39244034f4f8c63080ada111a39"
     }
 }
 
