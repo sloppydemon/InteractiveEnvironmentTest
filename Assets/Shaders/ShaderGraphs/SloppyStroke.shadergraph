@@ -493,7 +493,29 @@
             "m_Id": "37b289c1e38d432b8a425682e72aee36"
         }
     ],
-    "m_StickyNoteDatas": [],
+    "m_StickyNoteDatas": [
+        {
+            "m_Id": "94fa4d5abcd04ed19f2ed742bfd51214"
+        },
+        {
+            "m_Id": "f029ef33b1724198a2f1c6b9d3e8c20a"
+        },
+        {
+            "m_Id": "54f4def1f51442a3b0ba5c6aea8e6d81"
+        },
+        {
+            "m_Id": "f5bc1dbd734b48679e8de43d560c0d7e"
+        },
+        {
+            "m_Id": "27080f6f410b4ba898f4e016e1ddc3ea"
+        },
+        {
+            "m_Id": "1662214991aa4608981f731765b8921c"
+        },
+        {
+            "m_Id": "d1283b4cce8443aeb3c26a8f28bc5d92"
+        }
+    ],
     "m_Edges": [
         {
             "m_OutputSlot": {
@@ -4324,6 +4346,26 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "1662214991aa4608981f731765b8921c",
+    "m_Title": "",
+    "m_Content": "added options here to make the wobble smaller at higher depth",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -3179.0,
+        "y": 616.0,
+        "width": 200.0,
+        "height": 160.0
+    },
+    "m_Group": {
+        "m_Id": "a41a6e9ee8eb4bb287798e3734f41b6b"
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "1784eb1c0585427f9934f28f246e89ca",
     "m_Id": 1,
@@ -5573,6 +5615,26 @@
         "y": 0.0,
         "z": 0.0,
         "w": 0.0
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "27080f6f410b4ba898f4e016e1ddc3ea",
+    "m_Title": "",
+    "m_Content": "An attempt to make the lines thinner further from the camera, i think it does something.",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": 3390.0,
+        "y": 608.0,
+        "width": 200.0,
+        "height": 160.0
+    },
+    "m_Group": {
+        "m_Id": "37b289c1e38d432b8a425682e72aee36"
     }
 }
 
@@ -8323,6 +8385,26 @@
     },
     "m_ConversionType": 2,
     "m_Normalize": true
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "54f4def1f51442a3b0ba5c6aea8e6d81",
+    "m_Title": "",
+    "m_Content": "Edge detection from normals, partly from a tutorial, parly from a unity example",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": 1027.0,
+        "y": 104.0,
+        "width": 200.0,
+        "height": 160.0
+    },
+    "m_Group": {
+        "m_Id": "aac7c00930bd46d19c67a89211f89a5f"
+    }
 }
 
 {
@@ -12095,6 +12177,26 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "94fa4d5abcd04ed19f2ed742bfd51214",
+    "m_Title": "",
+    "m_Content": "Determines how fast the loutines wobble",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -4730.0,
+        "y": -235.0,
+        "width": 200.0,
+        "height": 160.0
+    },
+    "m_Group": {
+        "m_Id": "1ef2ae6822d34b7a89572c9dc4e9e316"
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "9505703c892c49dca9212f17dfc02b4c",
     "m_Id": 0,
@@ -15578,6 +15680,26 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "d1283b4cce8443aeb3c26a8f28bc5d92",
+    "m_Title": "",
+    "m_Content": "How fast someting moves relative to the camera also affects how wobbly the lines are, a kind of dirty way to hint at some kind of smear frame effect",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -4568.0,
+        "y": 1052.0,
+        "width": 200.0,
+        "height": 160.0
+    },
+    "m_Group": {
+        "m_Id": "a41a6e9ee8eb4bb287798e3734f41b6b"
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector2MaterialSlot",
     "m_ObjectId": "d1a0e05f0a1041a898dc7ff9da96c64d",
     "m_Id": 0,
@@ -17119,6 +17241,26 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "f029ef33b1724198a2f1c6b9d3e8c20a",
+    "m_Title": "",
+    "m_Content": "An attempt to make the lines slightly thicker where the normals point down (in world coordinates)\n",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -698.0,
+        "y": 1403.0,
+        "width": 200.0,
+        "height": 209.0
+    },
+    "m_Group": {
+        "m_Id": "407809bc5214426cbbc512e31c4b47ad"
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "f0c109a40a184786a9e8f045ec1348bf",
     "m_Id": 1,
@@ -17507,6 +17649,26 @@
             "m_Id": "21d90664387d4a0395d5a247a06c81dd"
         }
     ]
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "f5bc1dbd734b48679e8de43d560c0d7e",
+    "m_Title": "",
+    "m_Content": "Added edge detection from depth as well, gave a slightly different character",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": 1380.0,
+        "y": 1378.0,
+        "width": 200.0,
+        "height": 160.0
+    },
+    "m_Group": {
+        "m_Id": "9f9720c9062340c58ed7ea54bf9b2978"
+    }
 }
 
 {
